@@ -28,7 +28,7 @@ export default function formation() {
         </div>
         <div className='flex space-x-2 items-center'>
           <GraduationCap stroke='gray' size={20} className=''/> 
-          <span>Certificat Création d'application mobile avec Ract Native</span>
+          <span>Certificat Création d application mobile avec Ract Native</span>
         </div>
         <div className='flex space-x-2 items-center'>
           <University stroke='gray' size={20} className=''/> 
