@@ -1,6 +1,7 @@
 "use client"
 
 import photo from "../photo1.png"
+import Link from "next/link"
 
 import React from 'react'
 import Image from 'next/image'
@@ -18,15 +19,15 @@ export default function myprofile() {
             <div id="information" className="flex flex-col items-center justify-center ">
                 <label htmlFor="" className="text-md text-white">Backend Developer</label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
-                    <button className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
+                    <Link href="" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <Linkedin size={20} stroke="gray"/>
-                    </button>
-                    <button className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
+                    </Link>
+                    <Link href="https://www.facebook.com/profile.php?id=100095456943803" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <Facebook size={20} stroke="gray"/>
-                    </button>
-                    <button className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
+                    </Link>
+                    <Link href="https://github.com/Rojokabut" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <Github size={20} stroke="gray"/>
-                    </button>
+                    </Link>
                     {/* <button className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <MessageCircle size={20} stroke="gray"/>
                     </button> */}
