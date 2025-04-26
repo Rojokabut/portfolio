@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { View , ViewIcon, Eye} from 'lucide-react'
+import { Eye} from 'lucide-react'
 
 import Ecommerce from '../images/e-commerce.webp'
 import Portf from '../images/capt_portfolio.jpg'

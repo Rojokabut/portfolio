@@ -4,10 +4,9 @@ import Myskills from "./components/myskills";
 import Myproject from "./components/myproject";
 import Myprofile from "./components/myprofile";
 import Tools from "./components/tools";
-import Back from "./components/back";
 import Formation from "./components/formation";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [activeComponent, setActiveComponent] = useState("skills");

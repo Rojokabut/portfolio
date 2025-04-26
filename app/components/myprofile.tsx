@@ -5,7 +5,7 @@ import photo from "../photo1.png"
 import React from 'react'
 import Image from 'next/image'
 
-import { MessageCircle , Phone, Locate, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed, LocateOff} from "lucide-react";
+import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} from "lucide-react";
 
 export default function myprofile() {
   return (
