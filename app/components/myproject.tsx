@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Eye} from 'lucide-react'
 
@@ -32,9 +33,11 @@ export default function myproject() {
             <li>TypeScript</li>
             <li>Tailwind CSS</li>
           </ul>
-          <button className='bg-blue-700 hover:bg-blue-800 text-white px-3 py-1 rounded-lg text-sm flex space-x-1'>
-            <Eye stroke='white' size={20}/>
-            <span>Voir le code</span>
+          <button className='bg-blue-700 hover:bg-blue-800 text-white px-3 py-1 rounded-lg text-sm  '>
+            <Link href="https://github.com/Rojokabut/portfolio" className='flex items-center justify-center space-x-1' target="_blank">
+              <Eye stroke='white' size={20}/>
+              <span>Voir le code</span>
+            </Link> 
           </button>
         </div>
       </div>
