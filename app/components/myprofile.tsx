@@ -42,7 +42,7 @@ export default function myprofile() {
         <div className="text-white text-sm mt-5">
             Développeur fullstack orienté web et mobile, je maîtrise les technologies modernes pour concevoir des interfaces 
             réactives et des backends solides. Je transforme des besoins complexes en expériences fluides et performantes,
-            prêtes pour le monde réél 
+            prêtes pour le monde réél.
         </div>
         {/* contact */}
         <div id="contact" className="bg-gray-800 rounded-xl xl:px-5 px-1 py-2 mt-2 space-y-3 ">
