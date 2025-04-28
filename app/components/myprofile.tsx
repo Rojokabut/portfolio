@@ -1,6 +1,6 @@
 "use client"
 
-import photo from "../photo1.png"
+import photo from "../images/photo1.png"
 import Link from "next/link"
 
 import React from 'react'
