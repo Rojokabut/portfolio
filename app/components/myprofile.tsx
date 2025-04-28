@@ -22,7 +22,7 @@ export default function myprofile() {
         <div className=" flex flex-col items-center justify-center mt-20">
             <label htmlFor="" className="font-bold text-xl ">RAVELOMANANA Rojoniaina</label>
             <div id="information" className="flex flex-col items-center justify-center ">
-                <label htmlFor="" className="text-md text-white">Backend Developer</label>
+                <label htmlFor="" className="text-md text-white">Développeur web et mobile</label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
                     <Link href="" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <Linkedin size={20} stroke="gray"/>
