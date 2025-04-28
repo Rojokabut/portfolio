@@ -33,15 +33,15 @@ export default function formation() {
         formations.map(({date, diplome, ecole})=> (
             <div key={date} className='animate__animated animate__backInDown flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg text-gray-100 font-semibold space-y-2'>
               <div className='flex space-x-2 items-start'>
-                <Calendar stroke='gray' size={30} className=''/> 
+                <Calendar stroke='gray' size={20} className=''/> 
                 <span>{date}</span>
               </div>
               <div className='flex space-x-2 items-center'>
-                <GraduationCap stroke='gray' size={30} className=''/> 
+                <GraduationCap stroke='gray' size={20} className=''/> 
                 <span className=''>{diplome}</span>
               </div>
               <div className='flex space-x-2 items-center'>
-                <University stroke='gray' size={30} className=''/> 
+                <University stroke='gray' size={20} className=''/> 
                 <span>{ecole}</span>
               </div>
             </div>
