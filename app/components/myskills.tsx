@@ -45,7 +45,7 @@ export default function Myskills() {
             <h2 className="text-xl font-semibold">Frontend Development</h2>
           </div>
 
-          {[{ label: "React.js", value: reactProgress },
+          {[{ label: "Riact.js", value: reactProgress },
             { label: "React Native", value: reactNativeProgress },
             { label: "Next.js", value: nextProgress },
             { label: "Tailwind CSS", value: reactProgress }
