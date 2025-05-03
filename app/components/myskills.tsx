@@ -1,116 +1,147 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import frontend from "../logo/front.png";
 import backend from "../logo/backend-development.png";
 import Image from 'next/image';
-
 import { Code } from 'lucide-react';
 
 export default function Myskills() {
   const [reactProgress, setReactProgress] = useState(0);
   const [reactNativeProgress, setReactNativeProgress] = useState(0);
   const [nextProgress, setNextProgress] = useState(0);
-  const [DjangoProgress, setDjangoProgress] = useState(0)
+  const [DjangoProgress, setDjangoProgress] = useState(0);
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    let progress = 0;
-    const interval = setInterval(() => {
-      if (progress >= 80) {
-        clearInterval(interval);
-      } else {
-        progress += 1;
-        setReactProgress(progress);
-        setReactNativeProgress(progress - 5);
-        setNextProgress(progress);
-        setDjangoProgress(progress - 10)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.9,
       }
-    }, 5);
-    return () => clearInterval(interval);
+    );
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
   }, []);
 
+  useEffect(() => {
+    if (isVisible) {
+      let progress = 0;
+      const interval = setInterval(() => {
+        if (progress >= 80) {
+          clearInterval(interval);
+        } else {
+          progress += 1;
+          setReactProgress(progress);
+          setReactNativeProgress(progress - 5);
+          setNextProgress(progress);
+          setDjangoProgress(progress - 10);
+        }
+      }, 10);
+      return () => clearInterval(interval);
+    }
+  }, [isVisible]);
+
   return (
-    <div id="developpement" className="w-full mt-5 space-y-2 text-white">
+    <div
+      ref={ref}
+      id="developpement"
+      className="w-full mt-5 space-y-2 text-white"
+    >
       <div className="text-sm text-center">
         Un aperçu de mes compétences en développement web et mobile...
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-2 ">
-        {/* Frontend */}
-        <div className="animate__animated animate__backInDown flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
-          <div className="flex items-center space-x-4">
-            <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
-              <Image alt="frontend" src={frontend} width={30} height={30} />
+      <div className={`${isVisible ? 'animate__animated animate__backInDown animate__delay-1s' : 'hidden'}`}>
+        <div className="flex flex-col lg:flex-row gap-2">
+          {/* Frontend */}
+          <div className="animate__animated animate__backInDown flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
+                <Image alt="frontend" src={frontend} width={30} height={30} />
+              </div>
+              <h2 className="text-xl font-semibold">Frontend Development</h2>
             </div>
-            <h2 className="text-xl font-semibold">Frontend Development</h2>
+
+            {[{ label: "React.js", value: reactProgress },
+              { label: "React Native", value: reactNativeProgress },
+              { label: "Next.js", value: nextProgress },
+              { label: "Tailwind CSS", value: reactProgress }
+            ].map(({ label, value }) => (
+              <ProgressBar key={label} label={label} value={value} />
+            ))}
           </div>
 
-          {[{ label: "React.js", value: reactProgress },
-            { label: "React Native", value: reactNativeProgress },
-            { label: "Next.js", value: nextProgress },
-            { label: "Tailwind CSS", value: reactProgress }
-          ].map(({ label, value }) => (
-            <div key={label}>
-              <div className="flex justify-between text-sm text-gray-300 mb-1">
-                <span>{label}</span>
-                <span>{value}%</span>
+          {/* Backend */}
+          <div className="animate__animated animate__backInDown flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
+                <Image alt="backend" src={backend} width={30} height={30} />
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-in-out" style={{ width: `${value}%` }}></div>
-              </div>
+              <h2 className="text-xl font-semibold">Backend Development</h2>
             </div>
-          ))}
+
+            {[{ label: "Node.js", value: reactProgress },
+              { label: "Next.js", value: reactProgress },
+              { label: "Django", value: DjangoProgress }
+            ].map(({ label, value }) => (
+              <ProgressBar key={label} label={label} value={value} />
+            ))}
+          </div>
         </div>
 
-        {/* Backend */}
-        <div className="animate__animated animate__backInUp flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+        {/* Langages */}
+        <div className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
           <div className="flex items-center space-x-4">
-            <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
-              <Image alt="backend" src={backend} width={30} height={30} />
+            <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">
+              <Code stroke='blue' width={30} height={30} />
             </div>
-            <h2 className="text-xl font-semibold">Backend Development</h2>
+            <h2 className="text-xl font-semibold">Langages</h2>
           </div>
 
-          {[ {label: "Node.js", value:reactProgress}, 
-            {label: "Next.js", value: reactProgress}, 
-            {label:"Django", value: DjangoProgress}
-          ].map(({label, value}) => (
-            <div key={label}>
-              <div className="flex justify-between text-sm text-gray-300 mb-1">
-                <span>{label}</span>
-                <span>{value}%</span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-in-out" style={{ width: `${value}%` }}></div>
-              </div>
-            </div>
+          {[{ label: "TypeScript", value: reactNativeProgress },
+            { label: "JavaScript", value: reactProgress },
+            { label: "Python", value: reactNativeProgress }
+          ].map(({ label, value }) => (
+            <ProgressBar key={label} label={label} value={value} />
           ))}
         </div>
       </div>
+    </div>
+  );
+}
 
-      {/* Langages */}
-      <div className="animate__animated animate__backInDown bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
-        <div className="flex items-center space-x-4">
-          <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">
-            <Code stroke='blue' width={30} height={30} />
-          </div>
-          <h2 className="text-xl font-semibold">Langages</h2>
-        </div>
+type ProgressBarProps = {
+  label: string;
+  value: number;
+};
 
-        {[{label: "TypeScript", value:reactNativeProgress},
-         {label: "JavaScript", value:reactProgress}, 
-         {label: "Python", value:reactNativeProgress}
-        ].map(({label, value}) => (
-          <div key={label}>
-            <div className="flex justify-between text-sm text-gray-300 mb-1">
-              <span>{label}</span>
-              <span>{value}%</span>
-            </div>
-            <div className="w-full bg-gray-700 rounded-full h-2">
-              <div className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-in-out" style={{ width: `${value}%` }}></div>
-            </div>
-          </div>
-        ))}
+function ProgressBar({ label, value }: ProgressBarProps) {
+  return (
+    <div>
+      <div className="flex justify-between text-sm text-gray-300 mb-1">
+        <span>{label}</span>
+        <span>{value}%</span>
+      </div>
+      <div className="w-full bg-gray-700 rounded-full h-2">
+        <div
+          className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-in-out"
+          style={{ width: `${value}%` }}
+        ></div>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export default function myprofile() {
             <div id="information" className="flex flex-col items-center justify-center ">
                 <label htmlFor="" className="text-md text-white">Développeur web et mobile</label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
-                    <Link href="" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
+                    <Link href="https://www.linkedin.com/in/rojoniaina-ravelomanana-6351782a2" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <Linkedin size={20} stroke="gray"/>
                     </Link>
                     <Link href="https://www.facebook.com/profile.php?id=100095456943803" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
@@ -61,10 +61,10 @@ export default function myprofile() {
         </div>
 
         <div className="flex items-center justify-center mt-5 ">
-            <button className="bg-violet-600 text-white px-6 py-1 rounded-lg hover:bg-violet-700 flex space-x-1">
+            <a href='/RAVELOMANANA_Rojoniaina.pdf' download className="bg-violet-600 text-white px-6 py-1 rounded-lg hover:bg-violet-700 flex space-x-1">
                 <Download stroke="white" size={20} className="animate-bounce-slow"/>
                 <span>Download CV</span>
-            </button>
+            </a>
         </div>
 
     </div>
