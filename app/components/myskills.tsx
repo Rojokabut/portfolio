@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import frontend from "../logo/front.png";
 import backend from "../logo/backend-development.png";
 import Image from 'next/image';
-import { Code } from 'lucide-react';
+import { Code , Figma } from 'lucide-react';
 
 export default function Myskills() {
   const [reactProgress, setReactProgress] = useState(0);
@@ -24,7 +23,7 @@ export default function Myskills() {
         }
       },
       {
-        threshold: 0.9,
+        threshold: 1,
       }
     );
 
@@ -60,19 +59,22 @@ export default function Myskills() {
     <div
       ref={ref}
       id="developpement"
-      className="w-full mt-5 space-y-2 text-white"
+      className="w-full space-y-2 text-white"
     >
       <div className="text-sm text-center">
-        Un aperçu de mes compétences en développement web et mobile...
+        <h1 className='text-white text-2xl font-bold block lg:hidden'>Mes skills</h1>
+        <span>
+          Un aperçu de mes compétences en développement web et mobile...
+        </span>
       </div>
 
-      <div className={`${isVisible ? 'animate__animated animate__backInDown animate__delay-1s' : 'hidden'}`}>
-        <div className="flex flex-col lg:flex-row gap-2">
+      <div className={`${isVisible ? 'block' : 'hidden'} space-y-2 lg:space-y-0`}>
+        <div className="flex flex-col lg:flex-row gap-2 ">
           {/* Frontend */}
-          <div className="animate__animated animate__backInDown flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
+          <div className="animate__animated animate__backInLeft animate__slow flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
-                <Image alt="frontend" src={frontend} width={30} height={30} />
+                <Figma width={30} height={30} />
               </div>
               <h2 className="text-xl font-semibold">Frontend Development</h2>
             </div>
@@ -87,7 +89,7 @@ export default function Myskills() {
           </div>
 
           {/* Backend */}
-          <div className="animate__animated animate__backInDown flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+          <div className="animate__animated animate__backInUp animate__slow flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
                 <Image alt="backend" src={backend} width={30} height={30} />
@@ -105,7 +107,7 @@ export default function Myskills() {
         </div>
 
         {/* Langages */}
-        <div className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+        <div className="animate__animated animate__backInRight animate__slow bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">
               <Code stroke='blue' width={30} height={30} />
@@ -139,7 +141,7 @@ function ProgressBar({ label, value }: ProgressBarProps) {
       </div>
       <div className="w-full bg-gray-700 rounded-full h-2">
         <div
-          className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-in-out"
+          className="bg-gradient-to-r from-[#479ff6] to-[#a305ff] h-2 rounded-full transition-all duration-300 ease-in-out"
           style={{ width: `${value}%` }}
         ></div>
       </div>

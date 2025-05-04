@@ -9,7 +9,7 @@ import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} fr
 
 export default function myprofile() {
   return (
-    <div id="profile" className="relative lg:w-1/3 w-full text-white bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-2xl lg:px-4 xl:px-5 md:24 sm:px-15 px-5 py-2 shadow-md mt-32">
+    <div id="profile" className="relative lg:w-1/3 w-full text-white bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-2xl lg:px-4 xl:px-5 md:24 sm:px-15 px-5 py-2 shadow-md mt-40">
         <div className="absolute -mx-5 sm:-mx-15 top-[-120px] w-full flex items-center justify-center">
             <Image 
                 src="/photo1.png" 
