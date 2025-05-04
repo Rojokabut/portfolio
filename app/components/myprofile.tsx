@@ -39,7 +39,7 @@ export default function myprofile() {
                 </div>
             </div>
         </div>
-        <div className="text-white text-sm mt-5">
+        <div className="text-blue-100 text-sm mt-5 font-mono font-semibold">
             Développeur fullstack orienté web et mobile, je maîtrise les technologies modernes pour concevoir des interfaces 
             réactives et des backends solides. Je transforme des besoins complexes en expériences fluides et performantes,
             prêtes pour le monde réél.
