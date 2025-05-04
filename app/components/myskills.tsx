@@ -59,7 +59,7 @@ export default function Myskills() {
     <div
       ref={ref}
       id="developpement"
-      className="w-full space-y-2 text-white"
+      className="w-full space-y-2 text-white overflow-hidden"
     >
       <div className="text-sm text-center">
         <h1 className='text-white text-2xl font-bold block lg:hidden'>Mes skills</h1>

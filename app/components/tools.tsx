@@ -9,7 +9,7 @@ import mysql from '../logo/mysql.png'
 
 export default function Tools() {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <div className='text-center mb-1'>
         <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Database & Tools</h1>
       </div>
