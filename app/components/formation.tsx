@@ -58,7 +58,7 @@ export default function Formation() {
       };
     }, []);
   return (
-    <div ref={ref} >
+    <div ref={ref} className='overflow-hidden'>
       <div className='text-center mb-1'>
         <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Formations</h1>
       </div>
@@ -67,16 +67,16 @@ export default function Formation() {
           formations.map(({date, diplome, ecole, animation})=> (
               <div key={date} className={`animate__animated ${animation} animate__slow flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg text-gray-100 font-semibold space-y-2`}>
                 <div className='flex space-x-2 items-start'>
-                  <Calendar stroke='gray' size={20} className=''/> 
-                  <span>{date}</span>
+                  <Calendar  size={20} className='text-blue-400'/> 
+                  <span className='text-gray-300'>{date}</span>
                 </div>
                 <div className='flex space-x-2 items-center'>
-                  <GraduationCap stroke='gray' size={20} className=''/> 
-                  <span className=''>{diplome}</span>
+                  <GraduationCap  size={20} className='text-blue-400'/> 
+                  <span className='text-gray-300'>{diplome}</span>
                 </div>
                 <div className='flex space-x-2 items-center'>
-                  <University stroke='gray' size={20} className=''/> 
-                  <span>{ecole}</span>
+                  <University  size={20} className='text-blue-400'/> 
+                  <span className='text-gray-300'>{ecole}</span>
                 </div>
               </div>
           ))

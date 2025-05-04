@@ -2,8 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { Wrench } from 'lucide-react'
-import bdd from "../logo/data.png"
+import { Wrench , DatabaseZapIcon} from 'lucide-react'
 
 import mongodb from '../logo/mongodb.png'
 import mysql from '../logo/mysql.png'
@@ -19,7 +18,7 @@ export default function Tools() {
         <div className="animate__animated animate__bounceInLeft animate__slow px-4 py-3 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white shadow-lg space-y-5">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-tr from-gray-200 to-white p-3 rounded-xl">
-              <Image alt="backend" src={bdd} width={35} height={35} />
+              <DatabaseZapIcon width={35} height={35} className='text-blue-500'/>
             </div>
             <h2 className="text-xl font-semibold">Databases</h2>
           </div>
