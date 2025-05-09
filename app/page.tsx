@@ -17,12 +17,12 @@ export default function Home() {
     <div className="w-full">
       <Navbar />
       {/* <Back /> */}
-      <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2 bg-gradient-to-br from-[#1e293b] to-[#B8C0FF] sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
+      <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2 bg-gradient-to-br from-[#232a56] to-[#b667f8] sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
         {/* Profile */}
         <Myprofile />
 
         {/* Contenu */}
-        <div className="z-10 lg:w-2/3 w-full bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-lg px-5 sm:px-10 py-5 shadow-md">
+        <div className="z-10 lg:w-2/3 w-full lg:bg-gradient-to-r lg:from-[#0f172a] lg:to-[#1e293b] bg-[#0f172a] rounded-lg px-5 sm:px-10 py-5 shadow-md">
           <div id="titre" className="hidden lg:block">
             <h1 className="text-4xl font-bold text-[#3e34c0] font-sans font-rowdies">Portfolio</h1>
           </div>

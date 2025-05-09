@@ -1,13 +1,25 @@
 "use client"
 
 import Link from "next/link"
-
+// import {TypewriterEffectSmooth} from "@/components/ui/typewriter-effect"
 import React from 'react'
 import Image from 'next/image'
 
 import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} from "lucide-react";
 
+
 export default function myprofile() {
+//     const noms = [
+//         {
+//           text: "RAVELOMANANA",
+//           className:"text-xl font-bold ",
+//         },
+//         {
+//           text: "Rojoniaina",
+//           className:"text-xl font-bold text-blue-500",
+//         },
+       
+//       ];
   return (
     <div id="profile" className="relative lg:w-1/3 w-full text-white bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-2xl lg:px-4 xl:px-5 md:24 sm:px-15 px-5 py-2 shadow-md mt-40">
         <div className="absolute -mx-5 sm:-mx-15 top-[-120px] w-full flex items-center justify-center">
@@ -22,6 +34,7 @@ export default function myprofile() {
         <div className=" flex flex-col items-center justify-center mt-20">
             <label htmlFor="" className="font-bold text-xl ">RAVELOMANANA Rojoniaina</label>
             <div id="information" className="flex flex-col items-center justify-center ">
+                {/* <TypewriterEffectSmooth words={noms}/> */}
                 <label htmlFor="" className="text-md text-white">Développeur web et mobile</label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
                     <Link href="https://www.linkedin.com/in/rojoniaina-ravelomanana-6351782a2" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
@@ -39,23 +52,23 @@ export default function myprofile() {
                 </div>
             </div>
         </div>
-        <div className="text-blue-100 text-sm mt-5 font-mono font-semibold">
+        <div className="text-blue-200 text-sm mt-5 font-mono font-semibold">
             Développeur fullstack orienté web et mobile, je maîtrise les technologies modernes pour concevoir des interfaces 
             réactives et des backends solides. Je transforme des besoins complexes en expériences fluides et performantes,
             prêtes pour le monde réél.
         </div>
         {/* contact */}
-        <div id="contact" className="bg-gray-800 rounded-xl xl:px-5 px-1 py-2 mt-2 space-y-3 ">
+        <div id="contact" className="bg-black-950 rounded-xl xl:px-5 px-1 py-2 mt-2 space-y-3 ">
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
-                <Phone size={30} stroke="black" className="bg-white p-2 rounded-md"/>
+                <Phone size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
                 <span className="text-sm">+261 34 05 633 35</span>
             </div>
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
-                <LocateFixed size={30} stroke="black" className="bg-white p-2 rounded-md"/>
+                <LocateFixed size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
                 <span className="text-sm">099 AVA Avarajozoro Ambatolampy Tsimahafotsy</span>
             </div>
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
-                <Calendar size={30} stroke="black" className="bg-white p-2 rounded-md"/>
+                <Calendar size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
                 <span className="text-sm">23 Septembre 2002</span>
             </div>
         </div>

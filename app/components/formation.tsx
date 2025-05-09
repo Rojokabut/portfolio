@@ -7,14 +7,14 @@ import { Calendar , University, GraduationCap} from 'lucide-react'
 export default function Formation() {
   const formations = [
     {
-      date: "2024 -2025",
-      diplome : "LICENCE Informatique (Programmation)",
+      date: "2024 - 2025",
+      diplome : "LICENCE en Informatique (Programmation)",
       ecole: "IFT Ambondrona",
       animation: 'animate__backInDown'
     },
     {
       date: "2025 ",
-      diplome : "Cértificat Création d'application mobile avec React Native",
+      diplome : "Attestaion Création d'application mobile",
       ecole: "Orange Digital Center",
       animation: "animate__bounceInLeft"
     },

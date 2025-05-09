@@ -50,7 +50,7 @@ export default function Myskills() {
           setNextProgress(progress);
           setDjangoProgress(progress - 10);
         }
-      }, 10);
+      }, 35);
       return () => clearInterval(interval);
     }
   }, [isVisible]);
@@ -82,7 +82,7 @@ export default function Myskills() {
             {[{ label: "React.js", value: reactProgress },
               { label: "React Native", value: reactNativeProgress },
               { label: "Next.js", value: nextProgress },
-              { label: "Tailwind CSS", value: reactProgress }
+              { label: "Tailwind CSS", value: reactNativeProgress }
             ].map(({ label, value }) => (
               <ProgressBar key={label} label={label} value={value} />
             ))}
@@ -91,7 +91,7 @@ export default function Myskills() {
           {/* Backend */}
           <div className="animate__animated animate__backInUp animate__slow flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
             <div className="flex items-center space-x-4">
-              <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
+               <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
                 <Image alt="backend" src={backend} width={30} height={30} />
               </div>
               <h2 className="text-xl font-semibold">Backend Development</h2>
@@ -141,7 +141,7 @@ function ProgressBar({ label, value }: ProgressBarProps) {
       </div>
       <div className="w-full bg-gray-700 rounded-full h-2">
         <div
-          className="bg-gradient-to-r from-[#479ff6] to-[#a305ff] h-2 rounded-full transition-all duration-300 ease-in-out"
+          className="bg-gradient-to-r from-[#479ff6] to-[#a200ff] h-2 rounded-full transition-all duration-300 ease-in-out"
           style={{ width: `${value}%` }}
         ></div>
       </div>

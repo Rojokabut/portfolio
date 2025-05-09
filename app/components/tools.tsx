@@ -4,8 +4,12 @@ import React from 'react'
 import Image from 'next/image'
 import { DatabaseZapIcon,  Settings2} from 'lucide-react'
 
+import vscode from '../logo/vscode.webp'
+import postman from '../logo/postman.png'
 import mongodb from '../logo/mongodb.png'
 import mysql from '../logo/mysql.png'
+import git from '../logo/git.png'
+import github from '../logo/github.png'
 
 export default function Tools() {
   return (
@@ -42,11 +46,19 @@ export default function Tools() {
             <h2 className="text-xl font-semibold">Tools & Others</h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="p-3 bg-gray-700 text-white rounded-xl font-medium">VsCode</div>
-            <div className="p-3 bg-gray-700 text-white rounded-xl font-medium">Pycharm</div>
-            <div className="p-3 bg-gray-700 text-white rounded-xl font-medium">Git / Github</div>
-            <div className="p-3 bg-gray-700 text-white rounded-xl font-medium">Expo Go</div>
+          <div className="grid lg:grid-cols-3 grid-cols-2 gap-3">
+            <div className="flex items-center justify-center p-3 bg-white rounded-xl font-medium">
+              <Image alt='vscode' src={vscode} className='lg:w-full md:w-[50%]  w-[60%]'/>
+            </div>
+            <div className="flex items-center justify-center p-3 bg-white rounded-xl font-medium">
+              <Image alt='postman' src={postman} className='lg:w-full md:w-[50%] w-[60%]'/>
+            </div>
+            <div className="flex items-center justify-center p-3 bg-white  rounded-xl font-medium">
+              <Image alt='postman' src={github} className='lg:w-full md:w-[50%] w-[60%]'/>
+            </div>
+             <div className="flex items-center justify-center p-3 bg-white  rounded-xl font-medium">
+              <Image alt='vscode' src={git} className='lg:w-full md:w-[50%] w-[60%]'/>
+            </div>
           </div>
         </div>
       </div>
