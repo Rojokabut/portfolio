@@ -17,7 +17,7 @@ export default function Home() {
     <div className="w-full">
       <Navbar />
       {/* <Back /> */}
-      <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2 bg-gradient-to-br from-[#232a56] to-[#b667f8] sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
+      <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2 bg-gradient-to-br from-[#232a56] to-[#b667f8] lg:from-[#1e293b] lg:to-[#B8C0FF] sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
         {/* Profile */}
         <Myprofile />
 
