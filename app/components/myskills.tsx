@@ -32,9 +32,9 @@ export default function Myskills() {
       observer.observe(currentRef);
     }
 
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
+    // return () => {
+    //   if (currentRef) observer.unobserve(currentRef);
+    // };
   }, []);
 
   useEffect(() => {
@@ -68,10 +68,10 @@ export default function Myskills() {
         </span>
       </div>
 
-      <div className={`${isVisible ? 'block' : 'hidden'} space-y-2 lg:space-y-0`}>
-        <div className="flex flex-col lg:flex-row gap-2 ">
+      <div className={`${isVisible ? 'block' : 'hidden'} space-y-2 lg:space-y-3`}>
+        <div className="flex flex-col lg:flex-row gap-3 ">
           {/* Frontend */}
-          <div className="animate__animated animate__backInLeft animate__slow flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
+          <div className="animate__animated animate__slideInUp  animate__slow flex-1  bg-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
                 <Figma width={30} height={30} />
@@ -89,7 +89,7 @@ export default function Myskills() {
           </div>
 
           {/* Backend */}
-          <div className="animate__animated animate__backInUp animate__slow flex-1 bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+          <div className="animate__animated animate__slideInUp animate__slow flex-1 bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
             <div className="flex items-center space-x-4">
                <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
                 <Image alt="backend" src={backend} width={30} height={30} />
@@ -107,7 +107,7 @@ export default function Myskills() {
         </div>
 
         {/* Langages */}
-        <div className="animate__animated animate__backInRight animate__slow bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+        <div className="animate__animated animate__slideInUp animate__slow bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">
               <Code stroke='blue' width={30} height={30} />

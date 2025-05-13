@@ -10,25 +10,25 @@ export default function Formation() {
       date: "2024 - 2025",
       diplome : "LICENCE en Informatique (Programmation)",
       ecole: "IFT Ambondrona",
-      animation: 'animate__backInDown'
+      animation: 'animate__slideInDown'
     },
     {
       date: "2025 ",
       diplome : "Attestaion Création d'application mobile",
       ecole: "Orange Digital Center",
-      animation: "animate__bounceInLeft"
+      animation: "animate__slideInLeft"
     },
     {
       date: "2021 ",
       diplome : "Certificat Anglais parlé",
       ecole: "FLTC Tsaralalana",
-      animation: "animate__bounceInRight"
+      animation: "animate__slideInRight"
     },
     {
       date: "2019 - 2020",
       diplome : "Bacc série C",
       ecole: "Aceem Ivato",
-      animation: 'animate__backInDown'
+      animation: 'animate__slideInDown'
     }
   ]
 
@@ -65,7 +65,7 @@ export default function Formation() {
       <div className={`${isVisible ? 'block' : 'hidden'} w-full grid md:grid-cols-2 grid-cols-1 xl:gap-5 lg:gap-2 gap-4`}>
         {
           formations.map(({date, diplome, ecole, animation})=> (
-              <div key={date} className={`animate__animated ${animation} animate__slow flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg text-gray-100 font-semibold space-y-2`}>
+              <div key={date} className={`animate__animated ${animation} flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg text-gray-100 font-semibold space-y-2`}>
                 <div className='flex space-x-2 items-start'>
                   <Calendar  size={20} className='text-blue-400'/> 
                   <span className='text-gray-300'>{date}</span>

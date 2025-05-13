@@ -4,6 +4,7 @@ import Link from "next/link"
 // import {TypewriterEffectSmooth} from "@/components/ui/typewriter-effect"
 import React from 'react'
 import Image from 'next/image'
+import { Typewriter } from "react-simple-typewriter"
 
 import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} from "lucide-react";
 
@@ -52,13 +53,26 @@ export default function myprofile() {
                 </div>
             </div>
         </div>
-        <div className="text-blue-200 text-sm mt-5 font-mono font-semibold">
-            Développeur fullstack orienté web et mobile, je maîtrise les technologies modernes pour concevoir des interfaces 
-            réactives et des backends solides. Je transforme des besoins complexes en expériences fluides et performantes,
-            prêtes pour le monde réél.
+        <div className="flex flex-col mt-5 px-10 bg-blue-800 py-2 rounded-tr-3xl rounded-bl-3xl border-t border-b border-t-blue-500 border-b-blue-500">
+            <span className="text-blue-100 text-lg font-bold">
+                 
+                  <Typewriter
+                    words={[`"Du code, de la créativité, et du soupçon de café."`, ]}
+                    loop={1} // 0 = infini
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={100}
+                    deleteSpeed={50}
+                    delaySpeed={1500}
+                    />  
+            </span>
+            <span className="flex justify-center text-green-300 text-lg font-bold">
+               Bienvenue sur mon portfolio!
+            </span>
         </div>
+       
         {/* contact */}
-        <div id="contact" className="bg-black-950 rounded-xl xl:px-5 px-1 py-2 mt-2 space-y-3 ">
+        <div id="contact" className="bg-black-950 rounded-xl xl:px-5 px-1 py-2 mt-10 space-y-3 ">
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
                 <Phone size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
                 <span className="text-sm">+261 34 05 633 35</span>
@@ -73,8 +87,8 @@ export default function myprofile() {
             </div>
         </div>
 
-        <div className="flex items-center justify-center mt-5 ">
-            <a href='/RAVELOMANANA_Rojoniaina.pdf' download className="bg-violet-600 text-white px-6 py-1 rounded-lg hover:bg-violet-700 flex space-x-1">
+        <div className="flex items-center justify-center mt-3 ">
+            <a href='/CV_RAVELOMANANA_Rojoniaina.pdf' download className="bg-violet-600 text-white px-6 py-1 rounded-lg hover:bg-violet-700 flex space-x-1">
                 <Download stroke="white" size={20} className="animate-bounce-slow"/>
                 <span>Download CV</span>
             </a>

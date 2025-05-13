@@ -47,3 +47,18 @@ body {
   animation: fade-in-slow 2s ease-in-out forwards;
 }
 
+@keyframes typewriter {
+  0%, 100% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
