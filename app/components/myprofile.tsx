@@ -54,14 +54,14 @@ export default function myprofile() {
             </div>
         </div>
         <div className="flex flex-col mt-5 px-10 bg-blue-800 py-2 rounded-tr-3xl rounded-bl-3xl border-t border-b border-t-blue-500 border-b-blue-500">
-            <span className="text-blue-100 text-lg font-bold">
+            <span className="flex justify-center text-blue-100 text-lg font-bold">
                  
                   <Typewriter
-                    words={[`"Du code, de la créativité, et du soupçon de café."`, ]}
-                    loop={1} // 0 = infini
+                    words={['Du code,',' De la créativité, ','Et du soupçon de café.' ]}
+                    loop={0} // 0 = infini
                     cursor
                     cursorStyle="|"
-                    typeSpeed={100}
+                    typeSpeed={80}
                     deleteSpeed={50}
                     delaySpeed={1500}
                     />  
