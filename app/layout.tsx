@@ -12,19 +12,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isLoading, setIsLoading] = useState(true);
+  const [isZoom, setIsZoom] = useState(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2800); // 4.5 secondes
+    const zoom = setTimeout(() => {
+      setIsZoom(false)
+    }, 2500)
 
-    return () => clearTimeout(timer); // nettoyage si le composant se démonte
+    return () => {
+      clearTimeout(timer)
+      clearTimeout(zoom)
+    }; // nettoyage si le composant se démonte
   }, []);
 
   return (
     <html lang="fr">
       <body>
-        {isLoading ? <Loading /> : children}
+        {
+          isLoading ? 
+          <div className={`${!isZoom && 'animate__animated animate__zoomOut animate__slow'}`}><Loading /></div>
+          : 
+          <div className='animate__animated animate__fadeIn animate__slow'>
+            {children}    
+          </div>
+          
+        }
       </body>
     </html>
   );

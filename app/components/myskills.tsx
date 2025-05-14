@@ -5,11 +5,14 @@ import backend from "../logo/backend-development.png";
 import Image from 'next/image';
 import { Code , Figma } from 'lucide-react';
 
+
 export default function Myskills() {
   const [reactProgress, setReactProgress] = useState(0);
   const [reactNativeProgress, setReactNativeProgress] = useState(0);
   const [nextProgress, setNextProgress] = useState(0);
   const [DjangoProgress, setDjangoProgress] = useState(0);
+
+
 
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +26,7 @@ export default function Myskills() {
         }
       },
       {
-        threshold: 1,
+        threshold: 0.1,
       }
     );
 
@@ -37,7 +40,9 @@ export default function Myskills() {
     // };
   }, []);
 
+
   useEffect(() => {
+   
     if (isVisible) {
       let progress = 0;
       const interval = setInterval(() => {
@@ -51,27 +56,31 @@ export default function Myskills() {
           setDjangoProgress(progress - 10);
         }
       }, 35);
-      return () => clearInterval(interval);
+
+
+      return () => {
+        clearInterval(interval);
+       
+      }
     }
   }, [isVisible]);
 
   return (
     <div
-      ref={ref}
       id="developpement"
       className="w-full space-y-2 text-white overflow-hidden"
     >
       <div className="text-sm text-center">
-        <h1 className='text-white text-2xl font-bold block lg:hidden'>Mes skills</h1>
+        <h1 className='text-white text-2xl font-bold block lg:hidden'>Mes compétences</h1>
         <span>
           Un aperçu de mes compétences en développement web et mobile...
         </span>
       </div>
 
-      <div className={`${isVisible ? 'block' : 'hidden'} space-y-2 lg:space-y-3`}>
-        <div className="flex flex-col lg:flex-row gap-3 ">
+      <div className={`space-y-2 lg:space-y-3`}>
+        <div ref={ref} className="flex flex-col lg:flex-row gap-3 ">
           {/* Frontend */}
-          <div className="animate__animated animate__slideInUp  animate__slow flex-1  bg-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4">
+          <div className={`${isVisible && 'animate__animated animate__slideInUp  animate__slow'} flex-1  bg-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4`}>
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
                 <Figma width={30} height={30} />
@@ -89,7 +98,7 @@ export default function Myskills() {
           </div>
 
           {/* Backend */}
-          <div className="animate__animated animate__slideInUp animate__slow flex-1 bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+          <div className={`animate__animated animate__slideInUp animate__slow flex-1 bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4`}>
             <div className="flex items-center space-x-4">
                <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
                 <Image alt="backend" src={backend} width={30} height={30} />
@@ -107,7 +116,7 @@ export default function Myskills() {
         </div>
 
         {/* Langages */}
-        <div className="animate__animated animate__slideInUp animate__slow bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4">
+        <div className={`animate__animated animate__slideInUp animate__slow bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4`}>
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">
               <Code stroke='blue' width={30} height={30} />

@@ -15,7 +15,7 @@ export default function Tools() {
   return (
     <div className='overflow-hidden'>
       <div className='text-center mb-1'>
-        <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Database & Tools</h1>
+        <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Outils && Database</h1>
       </div>
       <div id="deux-elements" className="w-full grid md:grid-cols-2 grid-cols-1 xl:gap-5 lg:gap-2 gap-4 overflow-hidden">
         {/* Database card */}

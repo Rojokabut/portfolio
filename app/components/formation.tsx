@@ -10,25 +10,25 @@ export default function Formation() {
       date: "2024 - 2025",
       diplome : "LICENCE en Informatique (Programmation)",
       ecole: "IFT Ambondrona",
-      animation: 'animate__slideInDown'
+      animation: 'animate__slideUp'
     },
     {
       date: "2025 ",
       diplome : "Attestaion Création d'application mobile",
       ecole: "Orange Digital Center",
-      animation: "animate__slideInLeft"
+      animation: "animate__slideInUp"
     },
     {
       date: "2021 ",
       diplome : "Certificat Anglais parlé",
       ecole: "FLTC Tsaralalana",
-      animation: "animate__slideInRight"
+      animation: "animate__slideInUp"
     },
     {
       date: "2019 - 2020",
       diplome : "Bacc série C",
       ecole: "Aceem Ivato",
-      animation: 'animate__slideInDown'
+      animation: 'animate__slideUp'
     }
   ]
 

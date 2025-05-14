@@ -12,7 +12,7 @@ export default function myproject() {
   return (
     <div className='overflow-hidden'>
       <div className='text-center mb-1'>
-        <h1 className='text-white text-2xl font-bold lg:hidden self-center'>My Projects</h1>
+        <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Mes Projets</h1>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-2 '>
         <div className='bg-gray-800 rounded-t-xl rounded-b-xl'>
