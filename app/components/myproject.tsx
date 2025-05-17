@@ -4,6 +4,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Eye , FileWarning} from 'lucide-react'
+import {motion} from 'framer-motion'
+import { fadeIn } from '../variants'
 
 import Ecommerce from '../images/e-commerce.webp'
 import Portf from '../images/capt_portfolio.jpg'
@@ -15,7 +17,12 @@ export default function myproject() {
         <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Mes Projets</h1>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-2 '>
-        <div className='bg-gray-800 rounded-t-xl rounded-b-xl'>
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{once: false}}
+        className='bg-gray-800 rounded-t-xl rounded-b-xl'>
           <Image alt='ecommerce' src={Ecommerce} className='w-full rounded-t-xl'/>
           <div className='px-5 space-y-2 py-2 '>
             <h1 className='text-white font-bold text-xl'>Platerforme E-commerce </h1>
@@ -27,8 +34,13 @@ export default function myproject() {
               <span>Pas encore disponible</span>
             </button>
           </div>
-        </div>
-        <div className='bg-gray-800 rounded-t-xl rounded-b-xl'>
+        </motion.div>
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{once: false}}
+        className='bg-gray-800 rounded-t-xl rounded-b-xl'>
           <Image alt='ecommerce' src={Portf} className='w-full rounded-t-xl'/>
           <div className='px-5 py-2 '>
             <h1 className='text-white font-bold text-xl'>Portfolio </h1>
@@ -44,7 +56,7 @@ export default function myproject() {
               </Link> 
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
     

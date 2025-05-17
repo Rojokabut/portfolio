@@ -74,15 +74,15 @@ export default function myprofile() {
         {/* contact */}
         <div id="contact" className="bg-black-950 rounded-xl xl:px-5 px-1 py-2 mt-10 space-y-3 ">
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
-                <Phone size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
+                <Phone size={30} className="bg-white text-blue-500 p-2 rounded-md"/>
                 <span className="text-sm">+261 34 05 633 35</span>
             </div>
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
-                <LocateFixed size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
+                <LocateFixed size={30} className="bg-white text-blue-500 p-2 rounded-md"/>
                 <span className="text-sm">099 AVA Avarajozoro Ambatolampy Tsimahafotsy</span>
             </div>
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
-                <Calendar size={30} className="bg-white text-violet-500 p-2 rounded-md"/>
+                <Calendar size={30} className="bg-white text-blue-500 p-2 rounded-md"/>
                 <span className="text-sm">23 Septembre 2002</span>
             </div>
         </div>

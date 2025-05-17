@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import backend from "../logo/backend-development.png";
 import Image from 'next/image';
 import { Code , Figma } from 'lucide-react';
+import {motion} from 'framer-motion'
+import { fadeIn } from '../variants';
 
 
 export default function Myskills() {
@@ -80,7 +82,12 @@ export default function Myskills() {
       <div className={`space-y-2 lg:space-y-3`}>
         <div ref={ref} className="flex flex-col lg:flex-row gap-3 ">
           {/* Frontend */}
-          <div className={`${isVisible && 'animate__animated animate__slideInUp  animate__slow'} flex-1  bg-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4`}>
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{once: false}}
+            className={` flex-1  bg-gray-900 p-6 rounded-2xl shadow-lg space-y-4`}>
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
                 <Figma width={30} height={30} />
@@ -95,10 +102,15 @@ export default function Myskills() {
             ].map(({ label, value }) => (
               <ProgressBar key={label} label={label} value={value} />
             ))}
-          </div>
+          </motion.div>
 
           {/* Backend */}
-          <div className={`animate__animated animate__slideInUp animate__slow flex-1 bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4`}>
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{once: false}}
+           className={`flex-1 bg-gray-900 p-6 rounded-2xl shadow-md space-y-4`}>
             <div className="flex items-center space-x-4">
                <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
                 <Image alt="backend" src={backend} width={30} height={30} />
@@ -112,11 +124,17 @@ export default function Myskills() {
             ].map(({ label, value }) => (
               <ProgressBar key={label} label={label} value={value} />
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Langages */}
-        <div className={`animate__animated animate__slideInUp animate__slow bg-[#1e293b] p-6 rounded-2xl shadow-md space-y-4`}>
+        <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{once: false}}
+            className={` bg-gray-900 p-6 rounded-2xl shadow-md space-y-4`}>
+              {/* bg-[#1e293b] le bg taloh*/}
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">
               <Code stroke='blue' width={30} height={30} />
@@ -130,7 +148,7 @@ export default function Myskills() {
           ].map(({ label, value }) => (
             <ProgressBar key={label} label={label} value={value} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
