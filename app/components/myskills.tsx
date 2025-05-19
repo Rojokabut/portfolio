@@ -87,7 +87,7 @@ export default function Myskills() {
             initial="hidden"
             whileInView={"show"}
             viewport={{once: false}}
-            className={` flex-1  bg-gray-900 p-6 rounded-2xl shadow-lg space-y-4`}>
+            className={` flex-1  bg-gray-900 p-6 rounded-2xl shadow-lg space-y-4 border border-blue-950`}>
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-r from-blue-400 to-blue-800 p-3 rounded-xl">
                 <Figma width={30} height={30} />
@@ -110,7 +110,7 @@ export default function Myskills() {
             initial="hidden"
             whileInView={"show"}
             viewport={{once: false}}
-           className={`flex-1 bg-gray-900 p-6 rounded-2xl shadow-md space-y-4`}>
+           className={`flex-1 bg-gray-900 p-6 rounded-2xl shadow-md space-y-4 border border-blue-950`}>
             <div className="flex items-center space-x-4">
                <div className="bg-gradient-to-br from-white to-blue-300 p-3 rounded-xl">
                 <Image alt="backend" src={backend} width={30} height={30} />
@@ -133,7 +133,7 @@ export default function Myskills() {
             initial="hidden"
             whileInView={"show"}
             viewport={{once: false}}
-            className={` bg-gray-900 p-6 rounded-2xl shadow-md space-y-4`}>
+            className={` bg-gray-900 p-6 rounded-2xl shadow-md space-y-4 border border-blue-950`}>
               {/* bg-[#1e293b] le bg taloh*/}
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-br from-[#17223c] to-[#2f3e56] p-3 rounded-xl">

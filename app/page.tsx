@@ -7,17 +7,18 @@ import Myprofile from "./components/myprofile";
 import Tools from "./components/tools";
 import Formation from "./components/formation";
 import Navbar from "./components/Navbar";
+import About from './components/about'
 
 import { useState } from "react";
 
 export default function Home() {
-  const [activeComponent, setActiveComponent] = useState("skills");
+  const [activeComponent, setActiveComponent] = useState("about");
 
   return (
     <div className="w-full">
       <Navbar />
       {/* <Back /> */}
-      <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2 bg-gradient-to-br from-[#5462c1] to-[#b667f8]  sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
+      <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2  bg-[#C9D6FF] to-[#fff] [#5462c1] [#b667f8]  sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
         {/* Profile */}
         <Myprofile />
 
@@ -29,6 +30,16 @@ export default function Home() {
 
           {/* Boutons de navigation */}
           <div id="nav" className="hidden lg:flex justify-end space-x-2 mb-5 mt-3">
+
+            <button
+              className={`text-sm px-3 py-1 rounded ${
+                activeComponent === "about" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
+              }`}
+              onClick={() => setActiveComponent("about")}
+            >
+              A propos
+            </button>
+
             <button
               className={`text-sm px-3 py-1 rounded ${
                 activeComponent === "skills" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
@@ -68,6 +79,7 @@ export default function Home() {
 
           {/* Affichage conditionnel */}
           <div className="lg:block hidden">
+            {activeComponent === "about" && <About />}
             {activeComponent === "skills" && <Myskills />}
             {activeComponent === "projects" && <Myproject />}
             {activeComponent === "tools" && <Tools />}
@@ -75,6 +87,7 @@ export default function Home() {
           </div>
           
           <div className="lg:hidden flex flex-col space-y-24">
+            <About />
             <Myskills />
             <Myproject />
             <Tools />

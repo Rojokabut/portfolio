@@ -5,6 +5,8 @@ import Link from "next/link"
 import React from 'react'
 import Image from 'next/image'
 import { Typewriter } from "react-simple-typewriter"
+import {motion} from 'framer-motion'
+import { fadeIn } from '../variants';
 
 import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} from "lucide-react";
 
@@ -29,14 +31,27 @@ export default function myprofile() {
                 alt="photo de profil" 
                 width={200} 
                 height={200}
-                className="rounded-full shadow-xl"
+                className="rounded-full shadow-xl border border-blue-950"
             />
         </div>
         <div className=" flex flex-col items-center justify-center mt-20">
-            <label htmlFor="" className="font-bold text-xl ">RAVELOMANANA Rojoniaina</label>
+            <motion.label 
+                variants={fadeIn("left", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{once: true}}
+                className="font-bold text-xl "
+            >
+                RAVELOMANANA Rojoniaina
+            </motion.label>
             <div id="information" className="flex flex-col items-center justify-center ">
                 {/* <TypewriterEffectSmooth words={noms}/> */}
-                <label htmlFor="" className="text-md text-white">Développeur web et mobile</label>
+                <motion.label 
+                    variants={fadeIn("right", 0.2)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{once: true}}
+                 className="text-md text-white">Développeur web et mobile</motion.label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
                     <Link href="https://www.linkedin.com/in/rojoniaina-ravelomanana-6351782a2" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <Linkedin size={20} stroke="gray"/>
@@ -53,7 +68,7 @@ export default function myprofile() {
                 </div>
             </div>
         </div>
-        <div className="flex flex-col mt-5 px-10 bg-blue-800 py-2 rounded-tr-3xl rounded-bl-3xl border-t border-b border-t-blue-500 border-b-blue-500">
+        <div className="flex flex-col mt-5 px-10 bg-gradient-to-b from-[#021B79] to-[#0575E6]  py-2 rounded-tr-3xl rounded-bl-3xl border-t border-b border-t-blue-500 border-b-blue-500">
             <span className="flex justify-center text-blue-100 text-lg font-bold">
                  
                   <Typewriter
@@ -88,7 +103,7 @@ export default function myprofile() {
         </div>
 
         <div className="flex items-center justify-center mt-3 ">
-            <a href='/CV_RAVELOMANANA_Rojoniaina.pdf' download className="bg-violet-600 text-white px-6 py-1 rounded-lg hover:bg-violet-700 flex space-x-1">
+            <a href='/CV_RAVELOMANANA_Rojoniaina.pdf' download className="bg-blue-500 text-white px-6 py-1 rounded-lg hover:bg-blue-600 flex space-x-1">
                 <Download stroke="white" size={20} className="animate-bounce-slow"/>
                 <span>Download CV</span>
             </a>

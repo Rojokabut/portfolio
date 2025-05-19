@@ -7,9 +7,10 @@ import {motion} from 'framer-motion'
 
 
 import vscode from '../logo/vscode.webp'
-import postman from '../logo/postman.png'
+import postman from '../logo/postman1.png'
 import mongodb from '../logo/mongodb.png'
 import mysql from '../logo/mysql.png'
+import expoGo from '../logo/expoGo.png'
 import git from '../logo/git.png'
 import github from '../logo/github.png'
 import { fadeIn } from '../variants';
@@ -69,8 +70,11 @@ export default function Tools() {
             <div className="flex items-center justify-center p-3 bg-white  rounded-xl font-medium">
               <Image alt='postman' src={github} className='lg:w-full md:w-[50%] w-[60%]'/>
             </div>
-             <div className="flex items-center justify-center p-3 bg-white  rounded-xl font-medium">
+            <div className="flex items-center justify-center p-3 bg-white  rounded-xl font-medium">
               <Image alt='vscode' src={git} className='lg:w-full md:w-[50%] w-[60%]'/>
+            </div>
+            <div className="flex items-center justify-center p-3 bg-white  rounded-xl font-medium">
+              <Image alt='expoGo' src={expoGo} className='lg:w-full md:w-[50%] w-[60%]'/>
             </div>
           </div>
         </motion.div>
