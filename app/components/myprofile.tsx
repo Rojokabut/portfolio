@@ -8,7 +8,7 @@ import { Typewriter } from "react-simple-typewriter"
 import {motion} from 'framer-motion'
 import { fadeIn } from '../variants';
 
-import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} from "lucide-react";
+import {  Phone, Calendar,Download, LocateFixed} from "lucide-react";
 import { FaFacebook , FaLinkedin, FaGithub} from "react-icons/fa"
 
 
