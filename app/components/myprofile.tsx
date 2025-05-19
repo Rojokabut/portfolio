@@ -9,6 +9,7 @@ import {motion} from 'framer-motion'
 import { fadeIn } from '../variants';
 
 import {  Phone, Calendar, Facebook, Linkedin, Github ,Download, LocateFixed} from "lucide-react";
+import { FaFacebook , FaLinkedin, FaGithub} from "react-icons/fa"
 
 
 export default function myprofile() {
@@ -54,13 +55,13 @@ export default function myprofile() {
                  className="text-md text-white">Développeur web et mobile</motion.label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
                     <Link href="https://www.linkedin.com/in/rojoniaina-ravelomanana-6351782a2" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
-                        <Linkedin size={20} stroke="gray"/>
+                        <FaLinkedin size={20} className="text-gray-500"/>
                     </Link>
                     <Link href="https://www.facebook.com/profile.php?id=100095456943803" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
-                        <Facebook size={20} stroke="gray"/>
+                        <FaFacebook size={20} className="text-gray-500"/>
                     </Link>
                     <Link href="https://github.com/Rojokabut" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
-                        <Github size={20} stroke="gray"/>
+                        <FaGithub size={20} className="text-gray-500"/>
                     </Link>
                     {/* <button className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <MessageCircle size={20} stroke="gray"/>
@@ -102,7 +103,7 @@ export default function myprofile() {
             </div>
         </div>
 
-        <div className="flex items-center justify-center mt-3 ">
+        <div className="flex items-center justify-center mt-3 mb-2">
             <a href='/CV_RAVELOMANANA_Rojoniaina.pdf' download className="bg-blue-500 text-white px-6 py-1 rounded-lg hover:bg-blue-600 flex space-x-1">
                 <Download stroke="white" size={20} className="animate-bounce-slow"/>
                 <span>Download CV</span>

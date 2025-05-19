@@ -20,10 +20,24 @@ export default function about() {
             whileInView={"show"}
             viewport={{once: false}}
             className='bg-gray-900 p-6 rounded-2xl shadow-lg  border border-blue-950 flex flex-col space-y-2 text-gray-300 mt-6'>
-            <p className='text-white flex space-x-2'>
+            <div className='text-white flex space-x-2'>
                 <span className='text-blue-400 text-xl font-bold'>Bonjour!</span>
-                <MdWavingHand size={25} className='text-blue-400'/>
-            </p>
+                <motion.div
+                    animate={{
+                        rotate: [0, 20, -10, 20, -5, 0], // rotation "waving"
+                    }}
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        repeatDelay: 1,
+                        ease: "easeInOut"
+                    }}
+                    className="inline-block"
+                    >
+                    <MdWavingHand size={25} className="text-yellow-400" />
+                </motion.div>
+
+            </div>
             <p className='sm:text-lg text-sm'>
                 Je m&apos;appelle <span className='font-bold text-white'>Rojo, </span> 
                 je suis un développeur fullStack passionné par les technologies modernes et l&apos;apprentissage continu.  
@@ -39,7 +53,7 @@ export default function about() {
         </motion.div>
        <div className="mt-10">
             <h1 className="text-xl font-bold col-span-full text-white">Qu&apos;est-ce que je fais ?</h1>
-            <div className='grid md:grid-cols-2 grid-cols-1 gap-6 mt-2'>
+            <div className='xl:flex xl:space-x-4 space-y-4 xl:space-y-0 space-x-0 mt-2'>
                 <motion.div
                     variants={fadeIn("right", 0.2)}
                     initial="hidden"
