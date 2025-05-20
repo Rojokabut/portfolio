@@ -13,24 +13,27 @@ export default function ProgressBar({ label, target }: ProgressBarProps) {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    if (!inView) return;
+    let interval: NodeJS.Timeout;
 
-    let v = 0;
-    const interval = setInterval(() => {
-      v += 1;
-      setValue(v);
-      if (v >= target) clearInterval(interval);
-    }, 20);
+    if (inView) {
+      let v = 0;
+      interval = setInterval(() => {
+        v += 1;
+        setValue(v);
+        if (v >= target) clearInterval(interval);
+      }, 10);
+    } else {
+      setValue(0);
+    }
 
     return () => clearInterval(interval);
   }, [inView, target]);
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.5 }} // `amount` est optionnel pour définir à partir de combien d'affichage on considère "en vue"
       onViewportEnter={() => setInView(true)}
+      onViewportLeave={() => setInView(false)}
     >
       <div className="flex justify-between text-sm text-gray-300 mb-1">
         <span>{label}</span>
