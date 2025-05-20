@@ -21,14 +21,14 @@ export default function Tools() {
       <div className='text-center mb-1'>
         <h1 className='text-white text-2xl font-bold lg:hidden self-center'>Tools & Database</h1>
       </div>
-      <div id="deux-elements" className="w-full grid md:grid-cols-2 grid-cols-1 xl:gap-5 lg:gap-2 gap-4 overflow-hidden">
+      <div id="deux-elements" className="w-full grid md:grid-cols-2 grid-cols-1 xl:gap-5 lg:gap-2 gap-4 ">
         {/* Database card */}
         <motion.div
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{once: true}}
-        className=" px-4 py-3 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white shadow-lg space-y-5">
+        className=" px-4 py-3 rounded-2xl bg-gray-900 border border-blue-950 text-white shadow-lg space-y-5">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-tr from-gray-200 to-white p-3 rounded-xl">
               <DatabaseZapIcon width={35} height={35} className='text-blue-500'/>
@@ -52,7 +52,7 @@ export default function Tools() {
           initial="hidden"
           whileInView={"show"}
           viewport={{once: true}}
-         className=" px-4 py-3 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white shadow-lg space-y-5">
+         className=" px-4 py-3 rounded-2xl bg-gray-900 [#0f172a] [#1e293b] text-white border border-blue-950 shadow-lg space-y-5">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-tr from-gray-200 to-white p-3 rounded-xl">
               <Settings2 width={35} height={35} className='text-blue-500'/>

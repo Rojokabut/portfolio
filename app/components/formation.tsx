@@ -69,7 +69,7 @@ export default function Formation() {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{once: false}}
-               key={date} className={` flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b] p-6 rounded-2xl shadow-lg text-gray-100 font-semibold space-y-2 border border-blue-950`}>
+               key={date} className={` flex flex-col bg-gray-900 [#0f172a] [#1e293b] p-6 rounded-2xl shadow-lg text-gray-100 font-semibold space-y-2 border border-blue-950`}>
                 <div className='flex space-x-2 items-start'>
                   <Calendar  size={20} className='text-blue-400'/> 
                   <span className='text-gray-300'>{date}</span>
