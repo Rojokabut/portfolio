@@ -7,45 +7,48 @@ type ToolsType = {
 };
 
 const tools: ToolsType[] = [
+  // 🌐 Frontend principal
   {
-    label: "postman",
-    image: "/logo/postman1.png", 
+    label: "React",
+    image: "/logo/react.png",
   },
   {
-    label: "react",
-    image: "/logo/react.png",
+    label: "Next JS",
+    image: "/logo/nextjs.png", 
   },
   {
     label: "TypeScript",
     image: "/logo/typescript.png",
   },
   {
-    label: "Vscode",
-    image: "/logo/vscode.webp",
-  },
-  {
     label: "JavaScript",
     image: "/logo/javascript.png",
+  },
+  {
+    label: "Tailwind CSS",
+    image: "/logo/tailwind.png",
   },
   {
     label: "Bootstrap",
     image: "/logo/bootstrap.png", 
   },
   {
-    label: "Expo Go",
-    image: "/logo/expoGo.png",
+    label: "Framer Motion",
+    image: "/logo/framer-motion.png",
+  },
+
+  // ⚙️ Backend & API
+  {
+    label: "Node JS",
+    image: "/logo/node.png",
   },
   {
     label: "Express",
     image: "/logo/Expressjs.png",
   },
   {
-    label: "Git",
-    image: "/logo/git.png", 
-  },
-  {
-    label: "Github",
-    image: "/logo/github.png",
+    label: "Django",
+    image: "/logo/django.png",
   },
   {
     label: "Mongo DB",
@@ -55,37 +58,41 @@ const tools: ToolsType[] = [
     label: "MySql",
     image: "/logo/mysql.png", 
   },
+
+  // 🧪 Développement & outils
   {
-    label: "Node JS",
-    image: "/logo/node.png",
+    label: "Git",
+    image: "/logo/git.png", 
   },
   {
-    label: "Tailwind CSS",
-    image: "/logo/tailwind.png",
+    label: "Github",
+    image: "/logo/github.png",
   },
   {
-    label: "Next JS",
-    image: "/logo/nextjs.png", 
+    label: "Postman",
+    image: "/logo/postman1.png", 
   },
   {
-    label: "Framer Motion",
-    image: "/logo/framer-motion.png",
+    label: "Vscode",
+    image: "/logo/vscode.webp",
   },
+
+  // 📱 Mobile / autres
   {
-    label: "Django",
-    image: "/logo/django.png",
+    label: "Expo Go",
+    image: "/logo/expoGo.png",
   },
-  // ajoute autant que tu veux
 ];
+
 
 export default function ScrollSkills() {
   return (
-    <div className="overflow-hidden whitespace-nowrap relative py-4">
-      <div className="animate-marquee flex space-x-8">
+    <div className="overflow-hidden w-full py-4">
+      <div className="flex animate-marquee space-x-6 min-w-max">
         {[...tools, ...tools].map((tool, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center bg-white ck px-4 py-2 rounded-xl shadow"
+            className="flex flex-col items-center justify-center bg-white px-4 py-2 rounded-xl shadow-md"
           >
             <Image
               src={tool.image}
@@ -94,8 +101,8 @@ export default function ScrollSkills() {
               height={50}
               className="object-contain"
             />
-            <span className="text-gray-800">
-                {tool.label}
+            <span className="text-gray-800 text-sm mt-1 text-center">
+              {tool.label}
             </span>
           </div>
         ))}
