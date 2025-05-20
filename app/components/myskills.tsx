@@ -28,7 +28,7 @@ export default function Myskills() {
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="flex-1 bg-gray-900 p-6 rounded-2xl shadow-lg space-y-4 border border-blue-950"
           >
             <div className="flex items-center space-x-4">
@@ -52,7 +52,7 @@ export default function Myskills() {
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="flex-1 bg-gray-900 p-6 rounded-2xl shadow-md space-y-4 border border-blue-950"
           >
             <div className="flex items-center space-x-4">
@@ -75,7 +75,7 @@ export default function Myskills() {
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="bg-gray-900 p-6 rounded-2xl shadow-md space-y-4 border border-blue-950"
         >
           <div className="flex items-center space-x-4">

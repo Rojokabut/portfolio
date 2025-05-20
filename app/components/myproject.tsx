@@ -9,7 +9,7 @@ import { fadeIn } from '../variants'
 
 import Chat from '../images/chat.png'
 
-import Portf from '../images/capt_portfolio.jpg'
+import Portf from '../images/capt.png'
 
 export default function myproject() {
   return (
