@@ -87,8 +87,8 @@ const tools: ToolsType[] = [
 
 export default function ScrollSkills() {
   return (
-    <div className="overflow-hidden w-full py-4">
-      <div className="flex animate-marquee space-x-6 min-w-max">
+    <div className="overflow-hidden w-full py-4 ">
+      <div className="flex animate-marquee space-x-6 min-w-max ">
         {[...tools, ...tools].map((tool, index) => (
           <div
             key={index}
