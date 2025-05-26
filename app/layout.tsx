@@ -1,5 +1,7 @@
 "use client";
 
+
+
 import './globals.css'
 import 'animate.css'
 import React, { useEffect, useState } from 'react'
@@ -18,7 +20,7 @@ export default function RootLayout({
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2800)
+    }, 2500)
 
     const zoom = setTimeout(() => {
       setIsZoom(false)
@@ -32,6 +34,10 @@ export default function RootLayout({
 
   return (
     <html lang="fr">
+      <head>
+        <title>Rojoniaina</title>
+        <link rel="icon" type="image/png" href="/logo/logoRojo.png" />
+      </head>
       <body>
         {isLoading ? (
           hasImageError ? (

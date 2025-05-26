@@ -59,7 +59,7 @@ export default function about() {
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{once: false}}
-                    className='bg-blue-100 flex items-center space-x-3 p-4 rounded-xl '>
+                    className='bg-[#C9D6FF] flex items-center space-x-3 p-4 rounded-xl '>
                     <div>
                         <FaReact size={60} className='text-blue-500'/>
                     </div>
@@ -82,7 +82,7 @@ export default function about() {
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{once: false}}
-                    className='flex items-center space-x-3 bg-blue-100 p-4 rounded-xl'>
+                    className='flex items-center space-x-3 bg-[#C9D6FF] p-4 rounded-xl'>
                     <div>
                         <AiOutlineCloudServer size={60} className='text-blue-500'/>
                     </div>

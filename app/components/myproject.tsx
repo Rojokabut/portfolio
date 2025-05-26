@@ -74,7 +74,7 @@ export default function myproject() {
             <div className='flex flex-wrap gap-2 mt-5'>
               <span className='text-white px-3 py-1 bg-blue-400 rounded-lg w-fit text-xs'>Next JS</span>
               <span className='text-white px-3 py-1 bg-violet-400 rounded-lg w-fit text-xs'>TypeScript</span>
-              <span className='text-white px-3 py-1 bg-red-400 rounded-lg w-fit text-xs'>Tailwind CSS</span>
+              <span className='text-white px-3 py-1 bg-green-400 rounded-lg w-fit text-xs'>Tailwind CSS</span>
             </div>
             <button className='bg-blue-700 hover:bg-blue-800 text-white px-3 py-1 rounded-lg text-sm mt-10'>
               <Link href="https://github.com/Rojokabut/portfolio" className='flex items-center justify-center space-x-1' target="_blank">

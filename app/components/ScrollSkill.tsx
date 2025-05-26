@@ -99,7 +99,7 @@ export default function ScrollSkills() {
               alt={tool.label}
               width={50}
               height={50}
-              className="object-contain"
+              className="object-contain rounded-lg"
             />
             <span className="text-gray-800 text-sm mt-1 text-center">
               {tool.label}

@@ -27,7 +27,7 @@ export default function Tools() {
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{once: true}}
+          viewport={{once: false}}
         className=" px-4 py-3 rounded-2xl bg-gray-900 border border-blue-950 text-white shadow-lg space-y-5">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-tr from-gray-200 to-white p-3 rounded-xl">
@@ -51,7 +51,7 @@ export default function Tools() {
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{once: true}}
+          viewport={{once: false}}
          className=" px-4 py-3 rounded-2xl bg-gray-900 [#0f172a] [#1e293b] text-white border border-blue-950 shadow-lg space-y-5">
           <div className="flex items-center space-x-4">
             <div className="bg-gradient-to-tr from-gray-200 to-white p-3 rounded-xl">
