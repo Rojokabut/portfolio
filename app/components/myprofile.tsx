@@ -104,10 +104,22 @@ export default function myprofile() {
         </div>
 
         <div className="flex items-center justify-center mt-3 mb-2">
-            <a href='/CV_RAVELOMANANA_Rojoniaina.pdf' download className="bg-blue-500 text-white px-6 py-1 rounded-lg hover:bg-blue-600 flex space-x-1">
+            <button
+            onClick={() => {
+                const modal = document.getElementById('my_modal_2') as HTMLDialogElement | null;
+                modal?.showModal();
+            }}
+            className="bg-blue-500 text-white px-6 py-1 rounded-lg hover:bg-blue-600 flex space-x-1"
+            >
+                <Download stroke="white" size={20} className="animate-bounce-slow" />
+                <span>Download CV</span>
+            </button>
+
+
+            {/* <a href='/CV_RAVELOMANANA_Rojoniaina.pdf' download className="bg-blue-500 text-white px-6 py-1 rounded-lg hover:bg-blue-600 flex space-x-1">
                 <Download stroke="white" size={20} className="animate-bounce-slow"/>
                 <span>Download CV</span>
-            </a>
+            </a> */}
         </div>
 
     </div>

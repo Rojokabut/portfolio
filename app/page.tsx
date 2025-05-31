@@ -9,6 +9,7 @@ import Formation from "./components/formation";
 import Navbar from "./components/Navbar";
 import About from './components/about'
 import ScrollSkills from "./components/ScrollSkill";
+import Telechargement from "./components/telechargement";
 
 import { useState } from "react";
 
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <Navbar />
+      <Telechargement/>
       <div className="bg-[#C9D6FF] pb-10">
         <div className="w-full lg:flex lg:flex-row lg:space-x-2 space-y-2  to-[#fff] [#5462c1] [#b667f8]  sm:px-10 md:px-36 lg:px-10 pt-5 lg:py-5 md:py-5 xl:py-10 ">
           {/* Profile */}
@@ -34,7 +36,7 @@ export default function Home() {
 
               <button
                 className={`text-sm px-3 py-1 rounded ${
-                  activeComponent === "about" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
+                  activeComponent === "about" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300  hover:border-b hover:border-blue-300"
                 }`}
                 onClick={() => setActiveComponent("about")}
               >
@@ -43,7 +45,7 @@ export default function Home() {
 
               <button
                 className={`text-sm px-3 py-1 rounded ${
-                  activeComponent === "skills" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
+                  activeComponent === "skills" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300 hover:border-b hover:border-blue-300"
                 }`}
                 onClick={() => setActiveComponent("skills")}
               >
@@ -52,7 +54,7 @@ export default function Home() {
 
               <button
                 className={`text-sm px-3 py-1 rounded ${
-                  activeComponent === "projects" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
+                  activeComponent === "projects" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300 hover:border-b hover:border-blue-300"
                 }`}
                 onClick={() => setActiveComponent("projects")}
               >
@@ -61,7 +63,7 @@ export default function Home() {
 
               <button
                 className={`text-sm px-3 py-1 rounded ${
-                  activeComponent === "formation" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
+                  activeComponent === "formation" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300 hover:border-b hover:border-blue-300"
                 }`}
                 onClick={() => setActiveComponent("formation")}
               >
@@ -70,7 +72,7 @@ export default function Home() {
 
               <button
                 className={`text-sm px-3 py-1 rounded ${
-                  activeComponent === "tools" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300"
+                  activeComponent === "tools" ? "text-blue-500 font-semibold" : "text-gray-400 hover:text-blue-300 hover:border-b hover:border-blue-300"
                 }`}
                 onClick={() => setActiveComponent("tools")}
               >
