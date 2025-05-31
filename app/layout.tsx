@@ -1,36 +1,67 @@
 "use client";
 
-
-
-import './globals.css'
-import 'animate.css'
-import React, { useEffect, useState } from 'react'
-import Loading from './components/loading'
-import LoadPage from './components/loadPage'
+import './globals.css';
+import 'animate.css';
+import React, { useEffect, useState } from 'react';
+import Loading from './components/loading';
+import LoadPage from './components/loadPage';
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isLoading, setIsLoading] = useState(true)
-  const [isZoom, setIsZoom] = useState(true)
-  const [hasImageError, setHasImageError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [isZoom, setIsZoom] = useState(true);
+  const [hasImageError, setHasImageError] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2500)
+    const imageUrls = [
+      "/photo1.png",
+      // "/RAVELOMANANA_Rojoniaina.pdf",
+      "/progress-bar.gif",
 
-    const zoom = setTimeout(() => {
-      setIsZoom(false)
-    }, 2500)
+    ];
 
-    return () => {
-      clearTimeout(timer)
-      clearTimeout(zoom)
-    }
-  }, [])
+    let loadedCount = 0;
+    let hasError = false;
+
+    const onFinish = () => {
+      setTimeout(() => {
+        setIsZoom(false);
+        setIsLoading(false);
+      }, 2000);
+    };
+
+    const checkAllLoaded = () => {
+      if (loadedCount === imageUrls.length && !hasError) {
+        onFinish();
+      }
+    };
+
+    const timeout = setTimeout(() => {
+      if (loadedCount < imageUrls.length) {
+        setHasImageError(true);
+        setIsLoading(true); // forcer le composant <LoadPage />
+      }
+    }, 5000); // 5s max pour charger les images
+
+    imageUrls.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        checkAllLoaded();
+      };
+      img.onerror = () => {
+        hasError = true;
+        setHasImageError(true);
+        clearTimeout(timeout);
+      };
+    });
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <html lang="fr">
@@ -38,23 +69,27 @@ export default function RootLayout({
         <title>Rojoniaina</title>
         <link rel="icon" href="/logo/rojoLogo.ico" />
         <link rel="shortcut icon" href="/logo/rojoLogo.ico" />
-
       </head>
       <body>
         {isLoading ? (
           hasImageError ? (
             <LoadPage />
           ) : (
-            <div className={`${!isZoom && 'animate__animated animate__zoomOut animate__slow'}`}>
-              <Loading onImageError={() => setHasImageError(true)} />
+            <div
+              className={`${
+                !isZoom &&
+                "animate__animated animate__zoomOut animate__slow"
+              }`}
+            >
+              <Loading />
             </div>
           )
         ) : (
-          <div className='animate__animated animate__fadeIn animate__slow'>
+          <div className="animate__animated animate__fadeIn animate__slow">
             {children}
           </div>
         )}
       </body>
     </html>
-  )
+  );
 }
