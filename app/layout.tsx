@@ -67,7 +67,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <title>Rojoniaina</title>
-        <link rel="icon" href="/logo/rojoLogo.ico" />
+        <link rel="icon" href="/logo/logoRojo.ico" />
         <link rel="shortcut icon" href="/logo/rojoLogo.ico" />
       </head>
       <body>
