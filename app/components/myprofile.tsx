@@ -25,7 +25,7 @@ export default function myprofile() {
        
 //       ];
   return (
-    <div id="profile" className="relative lg:w-1/3 w-full text-white bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-2xl lg:px-4 xl:px-5 md:24 sm:px-15 px-5 py-2 shadow-md mt-40">
+    <div id="profile" className="relative lg:w-1/3 w-full text-white bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-3xl lg:px-4 xl:px-5 md:24 sm:px-15 px-5 py-2 shadow-md mt-40">
         <div className="absolute -mx-5 sm:-mx-15 top-[-120px] w-full flex items-center justify-center">
             <Image 
                 src="/photo1.png" 
@@ -52,7 +52,7 @@ export default function myprofile() {
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{once: true}}
-                 className="text-md text-white">Développeur web et mobile</motion.label>
+                 className="text-md text-gray-400">Développeur web et mobile</motion.label>
                 <div id="Reseau sociaux" className="flex  space-x-2">
                     <Link href="https://www.linkedin.com/in/rojoniaina-ravelomanana-6351782a2" target="_blank" className="bg-gray-700 p-1 rounded-md hover:bg-gray-600">
                         <FaLinkedin size={20} className="text-gray-500"/>
@@ -73,10 +73,10 @@ export default function myprofile() {
             <span className="flex justify-center text-blue-100 text-lg font-bold">
                  
                   <Typewriter
-                    words={['Du code,',' De la créativité, ','Et du soupçon de café.' ]}
-                    loop={0} // 0 = infini
+                    words={['Du code,','De la créativité, ','Et du soupçon de café.' ]}
+                    loop={0} 
                     cursor
-                    cursorStyle="|"
+                    cursorStyle="I"
                     typeSpeed={80}
                     deleteSpeed={50}
                     delaySpeed={1500}
@@ -89,10 +89,10 @@ export default function myprofile() {
        
         {/* contact */}
         <div id="contact" className="bg-black-950 rounded-xl xl:px-5 px-1 py-2 mt-10 space-y-3 ">
-            <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
+            <a href="tel:+261340563335" className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
                 <Phone size={30} className="bg-white text-blue-500 p-2 rounded-md"/>
                 <span className="text-sm">+261 34 05 633 35</span>
-            </div>
+            </a>
             <div className="w-full flex space-x-2 items-center hover:bg-gray-900 px-5 py-2 rounded-md cursor-pointer">
                 <LocateFixed size={30} className="bg-white text-blue-500 p-2 rounded-md"/>
                 <span className="text-sm">099 AVA Avarajozoro Ambatolampy Tsimahafotsy</span>

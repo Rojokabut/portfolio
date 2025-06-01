@@ -37,6 +37,7 @@ export default function myproject() {
               <span className='text-white px-3 py-1 bg-green-400 rounded-lg w-fit text-xs'>Tailwind CSS</span>
               <span className='text-white px-3 py-1 bg-yellow-400 rounded-lg w-fit text-xs'>Socket.io</span>
               <span className='text-white px-3 py-1 bg-red-400 rounded-lg w-fit text-xs'>Nodejs/Express</span>
+              <span className='text-white px-3 py-1 bg-orange-400 rounded-lg w-fit text-xs'>Mongo DB</span>
             </div>
 
             <div className='flex flex-wrap gap-2 '>
