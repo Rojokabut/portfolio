@@ -63,7 +63,7 @@ export default function Myskills() {
             </div>
 
             {skills
-              .filter((s) => ["Node.js", "Next.js", "Django"].includes(s.label))
+              .filter((s) => ["Node.js", "Next.js", "Laravel"].includes(s.label))
               .map((skill) => (
                 <ProgressBar key={skill.label} label={skill.label} target={skill.target} />
               ))}
@@ -86,7 +86,7 @@ export default function Myskills() {
           </div>
 
           {skills
-            .filter((s) => ["TypeScript", "JavaScript", "Python"].includes(s.label))
+            .filter((s) => ["TypeScript", "JavaScript", "Php"].includes(s.label))
             .map((skill) => (
               <ProgressBar key={skill.label} label={skill.label} target={skill.target} />
             ))}
