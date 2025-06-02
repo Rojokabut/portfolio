@@ -47,6 +47,14 @@ const tools: ToolsType[] = [
     image: "/logo/Expressjs.png",
   },
   {
+    label:"Laravel",
+    image: '/logo/laravel.png'
+  },
+  {
+    label: "Php",
+    image: "/logo/php.png",
+  },
+  {
     label: "Django",
     image: "/logo/django.png",
   },
