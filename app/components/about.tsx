@@ -1,107 +1,195 @@
-import React from 'react'
-import {motion} from 'framer-motion'
-import { fadeIn } from '../variants';
-import { FaReact } from 'react-icons/fa';
-import { AiOutlineCloudServer } from 'react-icons/ai';
-import { MdWavingHand } from 'react-icons/md'; // 👋 style très parlant
-// import { HiHandRaised } from 'react-icons/hi2'; // ✋ moderne et simple
+"use client"
 
+import type React from "react"
+import { motion } from "framer-motion"
+import { fadeIn, staggerContainer, textReveal } from "../variants"
+import { MdWavingHand } from "react-icons/md"
+import { Sparkles, Code2, Database } from "lucide-react"
 
+const services = [
+  {
+    icon: Code2,
+    title: "Développement Frontend",
+    description: "Création d'interfaces modernes et intuitives avec React, Next.js et les dernières technologies web.",
+    features: ["React.js & Next.js", "TypeScript", "Tailwind CSS", "Animations fluides"],
+    gradient: "from-blue-500 to-cyan-500",
+    delay: 0.2,
+  },
+  {
+    icon: Database,
+    title: "Développement Backend",
+    description: "Conception d'APIs robustes et scalables avec une architecture moderne et sécurisée.",
+    features: ["Node.js & Express", "Bases de données", "APIs RESTful", "Authentification"],
+    gradient: "from-emerald-500 to-teal-500",
+    delay: 0.4,
+  },
+]
 
-export default function about() {
+export default function About() {
   return (
-    <div className='overflow-hidden'>
-        <div className='text-center'>
-            <h1 className='lg:hidden block text-white text-2xl font-bold '>A propos</h1>
-        </div>
-        <motion.div 
-            variants={fadeIn("right", 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{once: false}}
-            className='bg-gray-900 p-6 rounded-2xl shadow-lg  border border-blue-950 flex flex-col space-y-2 text-gray-300 mt-6'>
-            <div className='text-white flex space-x-2'>
-                <span className='text-blue-400 text-xl font-bold'>Bonjour!</span>
-                <motion.div
-                    animate={{
-                        rotate: [0, 20, -10, 20, -5, 0], // rotation "waving"
-                    }}
-                    transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatDelay: 1,
-                        ease: "easeInOut"
-                    }}
-                    className="inline-block"
-                    >
-                    <MdWavingHand size={25} className="text-yellow-400" />
-                </motion.div>
+    <motion.div
+      variants={staggerContainer()}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="space-y-8"
+    >
+      {/* Titre mobile */}
+      <div className="text-center lg:hidden">
+        <motion.h1
+          variants={textReveal()}
+          className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+        >
+          À propos
+        </motion.h1>
+      </div>
 
-            </div>
-            <p className='sm:text-lg text-sm'>
-                Je m&apos;appelle <span className='font-bold text-white'>Rojo, </span> 
-                je suis un développeur fullStack passionné par les technologies modernes et l&apos;apprentissage continu.  
-            </p>
-            <p className='sm:text-lg text-sm'>
-                J&apos;aime concevoir des applications performantes et intuitives, aussi bien pour le web et pour le mobile,
-               en utilisant des frameworks web modernes et des outils backend performants
-            </p>
-            <p className='sm:text-lg text-sm'>
-                Curieux et motivé, je cherche constamment à progresser, à découvrir de nouvelles pratiques de développement, 
-                et à relever des défis techniques concrets. 
-            </p>
+      {/* Section présentation */}
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        className="relative bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-blue-500/20 shadow-xl overflow-hidden transition-colors duration-500"
+      >
+        {/* Effet de brillance */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+
+        {/* Salutation avec animation */}
+        <motion.div variants={fadeIn("right", 0.2)} className="flex items-center space-x-3 mb-6">
+          <div className="flex items-center space-x-2">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Bonjour !
+            </span>
+            <motion.div
+              animate={{
+                rotate: [0, 30, -10, 30, -5, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatDelay: 3,
+                ease: "easeInOut",
+              }}
+              className="inline-block"
+            >
+              <MdWavingHand size={28} className="text-yellow-500 drop-shadow-lg" />
+            </motion.div>
+          </div>
+          <Sparkles className="text-blue-500 w-6 h-6 animate-pulse" />
         </motion.div>
-       <div className="mt-10">
-            <h1 className="text-xl font-bold col-span-full text-white">Qu&apos;est-ce que je fais ?</h1>
-            <div className='xl:flex xl:space-x-4 space-y-4 xl:space-y-0 space-x-0 mt-2'>
-                <motion.div
-                    variants={fadeIn("right", 0.2)}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{once: false}}
-                    className='bg-[#C9D6FF] flex items-center space-x-3 p-4 rounded-xl '>
-                    <div>
-                        <FaReact size={60} className='text-blue-500'/>
-                    </div>
-                    <div>
-                        <h2 className="text-xl font-semibold text-blue-500">Développement Frontend</h2>
-                        <p className="text-gray-900 flex flex-col space-y-1 mt-2">
-                            <span>
-                                Création d’interfaces modernes, responsives et intuitives à l’aide de technologies comme React.js, React Native, Next.js et Tailwind CSS.  
-                            </span>
-                            <span>
-                                Mise en place d’une expérience utilisateur fluide, accessible et optimisée pour tous les supports.
-                            </span> 
-                        </p>
-                    </div>
-                    
-                </motion.div>
 
-                <motion.div
-                    variants={fadeIn("left", 0.2)}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{once: false}}
-                    className='flex items-center space-x-3 bg-[#C9D6FF] p-4 rounded-xl'>
-                    <div>
-                        <AiOutlineCloudServer size={60} className='text-blue-500'/>
-                    </div>
-                    <div>
-                        <h2 className="text-xl font-semibold text-blue-500">Développement Backend</h2>
-                        <p className="text-gray-900 flex flex-col space-y-1 mt-2">
-                            <span>
-                                Conception d’APIs performantes et sécurisées avec Node.js, Express et Django.  
-                            </span>
-                            <span>
-                                Gestion des bases de données (MongoDB, MySQL), de l’authentification, et de la logique serveur pour assurer stabilité et scalabilité.
-                            </span>
-                        </p>
-                    </div>
-                    
-                </motion.div>
+        {/* Présentation */}
+        <motion.div variants={staggerContainer(0.1)} className="space-y-6">
+          <motion.p variants={textReveal(0.1)} className="text-lg leading-relaxed  text-slate-300">
+            Je m&apos;appelle{" "}
+            <span className="font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Rojo
+            </span>
+            , développeur Full-Stack passionné par l&apos;innovation technologique et l&apos;excellence dans le développement web
+            et mobile.
+          </motion.p>
+
+          <motion.p variants={textReveal(0.2)} className="text-lg leading-relaxed  text-slate-300">
+            Je conçois des applications performantes et élégantes, en alliant créativité et expertise technique pour
+            créer des expériences utilisateur exceptionnelles.
+          </motion.p>
+
+          <motion.p variants={textReveal(0.3)} className="text-lg leading-relaxed  text-slate-300">
+            Toujours en quête d&apos;apprentissage, je relève chaque défi avec enthousiasme et rigueur, en adoptant les
+            meilleures pratiques du développement moderne.
+          </motion.p>
+        </motion.div>
+
+        {/* Stats rapides */}
+        <motion.div variants={fadeIn("up", 0.4)} className="mt-8 grid grid-cols-3 gap-4">
+          {[
+            { label: "Projets", value: "10+" },
+            { label: "Technologies", value: "15+" },
+            { label: "Expérience", value: "3+ ans" },
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className="text-center p-4  bg-slate-800/30 rounded-xl border  border-slate-700/50 transition-colors duration-500"
+            >
+              <div className="text-2xl font-bold text-blue-600">{stat.value}</div>
+              <div className="text-sm t text-slate-400">{stat.label}</div>
             </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Section services */}
+      <motion.div variants={fadeIn("up", 0.3)}>
+        <motion.h2
+          variants={textReveal()}
+          className="text-2xl font-bold  text-white mb-8 flex items-center space-x-3"
+        >
+          <span>Ce que je fais</span>
+          <div className="flex-1 h-px bg-gradient-to-r from-blue-500/50 to-transparent" />
+        </motion.h2>
+
+        <motion.div variants={staggerContainer(0.2)} className="grid gap-6">
+          {services.map((service, index) => (
+            <ServiceCard key={index} service={service} />
+          ))}
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Composant ServiceCard amélioré
+interface ServiceCardProps {
+  service: {
+    icon: React.ComponentType<{ size: number; className: string }>
+    title: string
+    description: string
+    features: string[]
+    gradient: string
+    delay: number
+  }
+}
+
+function ServiceCard({ service }: ServiceCardProps) {
+  const Icon = service.icon
+
+  return (
+    <motion.div
+      variants={fadeIn("up", service.delay)}
+      whileHover={{ y: -5, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="group relative bg-slate-800/60 backdrop-blur-sm p-8 rounded-3xl border  border-slate-700/50  hover:border-blue-500/50 transition-all duration-500 overflow-hidden"
+    >
+      {/* Effet de brillance au hover */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      <div className="relative z-10 flex items-start space-x-6">
+        {/* Icône */}
+        <div
+          className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}
+        >
+          <Icon size={28} className="text-white" />
         </div>
 
-    </div>
+        {/* Contenu */}
+        <div className="flex-1 space-y-4">
+          <h3 className="text-xl font-bold text-white  group-hover:text-blue-400 transition-colors duration-300">
+            {service.title}
+          </h3>
+
+          <p className=" text-slate-300 leading-relaxed">{service.description}</p>
+
+          {/* Features */}
+          <div className="flex flex-wrap gap-2">
+            {service.features.map((feature, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-slate-100 bg-slate-700/50  text-slate-300 text-sm rounded-full border border-slate-200 border-slate-600/50 group-hover:border-blue-300 group-hover:border-blue-500/50 transition-colors duration-300"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
   )
 }
