@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { FaGithub } from "react-icons/fa"
 import { Menu, X, Home, User, Code, Briefcase, GraduationCap, Settings } from "lucide-react"
 
+
 interface NavLink {
   href: string
   label: string
