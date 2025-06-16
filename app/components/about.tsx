@@ -35,7 +35,10 @@ export default function About() {
       className="space-y-8"
     >
       {/* Titre mobile */}
-      <div className="text-center lg:hidden">
+      <div
+        id="about"
+       className="text-center lg:hidden">
+
         <motion.h1
           variants={textReveal()}
           className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
@@ -99,7 +102,7 @@ export default function About() {
         </motion.div>
 
         {/* Stats rapides */}
-        <motion.div variants={fadeIn("up", 0.4)} className="mt-8 grid grid-cols-3 gap-4">
+        <motion.div variants={fadeIn("up", 0.4)} className="mt-8 grid lg:grid-cols-3 grid-cols-1 gap-4">
           {[
             { label: "Projets", value: "10+" },
             { label: "Technologies", value: "15+" },
@@ -161,7 +164,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       {/* Effet de brillance au hover */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      <div className="relative z-10 flex items-start space-x-6">
+      <div className="relative z-10 flex flex-col md:flex-row justify-center md:items-start items-center gap-2 space-x-6">
         {/* Icône */}
         <div
           className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}

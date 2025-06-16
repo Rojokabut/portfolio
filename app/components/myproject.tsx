@@ -108,6 +108,7 @@ interface ProjectCardProps {
 function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
+      id="projects"
       variants={fadeIn("up", 0.2 + index * 0.1)}
       initial="hidden"
       whileInView="show"

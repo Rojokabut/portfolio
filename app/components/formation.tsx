@@ -94,7 +94,7 @@ export default function Formation() {
   }, [])
 
   return (
-    <div ref={ref} className="overflow-hidden">
+    <div ref={ref} id="formation" className="overflow-hidden">
       {/* Titre mobile */}
       <div className="text-center mb-6">
         <h1 className="text-white text-2xl font-bold lg:hidden">Formations</h1>

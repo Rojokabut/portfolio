@@ -41,8 +41,9 @@ export default function Navbar() {
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
-      setIsMobileMenuOpen(false)
+      
     }
+    // setIsMobileMenuOpen(false)
   }
 
   return (
@@ -78,39 +79,6 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
-            {/* Toggle Theme */}
-            {/* <motion.button
-              onClick={toggleTheme}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
-              aria-label="Changer de thème"
-            >
-              <AnimatePresence mode="wait">
-                {theme === "dark" ? (
-                  <motion.div
-                    key="sun"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Sun size={18} className="text-yellow-500" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="moon"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Moon size={18} className="text-slate-700" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button> */}
-
             {/* GitHub Link */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link

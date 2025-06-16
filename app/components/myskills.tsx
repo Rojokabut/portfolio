@@ -68,7 +68,7 @@ export default function MySkills() {
   const ref = useRef<HTMLDivElement | null>(null)
 
   return (
-    <div id="developpement" className="w-full space-y-6 text-white overflow-hidden">
+    <div id="skills" className="w-full space-y-6 text-white overflow-hidden">
       {/* En-tête */}
       <div className="text-center space-y-2">
         <h1 className="text-white text-2xl font-bold block lg:hidden">Mes compétences</h1>
