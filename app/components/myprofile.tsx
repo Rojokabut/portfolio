@@ -39,7 +39,7 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    text: "Ambatolampy, Madagascar",
+    text: "Ambatolampy Tsimahafotsy",
     color: "text-blue-400",
   },
   {
@@ -83,8 +83,8 @@ export default function MyProfile() {
               priority
             />
             {/* Badge en ligne */}
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full border-4 border-slate-900 flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
+            <div className="absolute bottom-2 right-2 w-7 h-7 bg-gradient-to-r from-emerald-500 to-emerald-500 rounded-full border-4 border-slate-900 flex items-center justify-center">
+              <div className=" rounded-full animate-pulse" />
             </div>
           </div>
         </motion.div>
@@ -112,7 +112,7 @@ export default function MyProfile() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 text-blue-500 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-slate-700/50 transition-all duration-300 ${social.color}`}
+                    className={`w-12 h-12 text-blue-800 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-slate-700/50 transition-all duration-300 ${social.color}`}
                     aria-label={social.label}
                   >
                     <social.icon size={20} />

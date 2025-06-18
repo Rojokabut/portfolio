@@ -19,7 +19,7 @@ const services = [
     icon: Database,
     title: "Développement Backend",
     description: "Conception d'APIs robustes et scalables avec une architecture moderne et sécurisée.",
-    features: ["Node.js & Express", "Bases de données", "APIs RESTful", "Authentification"],
+    features: ["Node.js & Express","Laravel", "Bases de données", "APIs RESTful", "Authentification"],
     gradient: "from-emerald-500 to-teal-500",
     delay: 0.4,
   },
@@ -28,6 +28,7 @@ const services = [
 export default function About() {
   return (
     <motion.div
+      id="about"
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
@@ -36,14 +37,14 @@ export default function About() {
     >
       {/* Titre mobile */}
       <div
-        id="about"
+        
        className="text-center lg:hidden">
 
         <motion.h1
           variants={textReveal()}
           className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
         >
-          À propos
+          A propos
         </motion.h1>
       </div>
 
@@ -104,9 +105,9 @@ export default function About() {
         {/* Stats rapides */}
         <motion.div variants={fadeIn("up", 0.4)} className="mt-8 grid lg:grid-cols-3 grid-cols-1 gap-4">
           {[
-            { label: "Projets", value: "10+" },
-            { label: "Technologies", value: "15+" },
-            { label: "Expérience", value: "3+ ans" },
+            { label: "Projets", value: "5+" },
+            { label: "Technologies", value: "10+" },
+            { label: "Expérience", value: "2+ ans" },
           ].map((stat, index) => (
             <div
               key={index}

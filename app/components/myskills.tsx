@@ -2,14 +2,15 @@
 
 import type React from "react"
 import { useRef } from "react"
-import Image from "next/image"
-import { Code, Figma } from "lucide-react"
+// import Image from "next/image"
+import { Code, Figma, Server } from "lucide-react"
 import { motion } from "framer-motion"
-import { fadeIn } from "../variants"
+import { fadeIn , textReveal} from "../variants"
 import ProgressBar from "./Progressbar/ProgressBar"
 
+
 // Import de l'image backend
-import backend from "../logo/backend-development.png"
+// import backend from "../logo/backend-development.png"
 
 interface Skill {
   label: string
@@ -19,19 +20,19 @@ interface Skill {
 
 const skills: Skill[] = [
   // Frontend
-  { label: "React.js", target: 85, category: "frontend" },
+  { label: "React.js", target: 80, category: "frontend" },
   { label: "React Native", target: 75, category: "mobile" },
   { label: "Next.js", target: 80, category: "frontend" },
-  { label: "Tailwind CSS", target: 90, category: "frontend" },
+  { label: "Tailwind CSS", target: 80, category: "frontend" },
 
   // Backend
-  { label: "Node.js", target: 75, category: "backend" },
-  { label: "Laravel", target: 70, category: "backend" },
+  { label: "Node.js", target: 85, category: "backend" },
+  { label: "Laravel", target: 80, category: "backend" },
 
   // Languages
-  { label: "TypeScript", target: 80, category: "language" },
-  { label: "JavaScript", target: 85, category: "language" },
-  { label: "PHP", target: 70, category: "language" },
+  { label: "TypeScript", target: 75, category: "language" },
+  { label: "JavaScript", target: 80, category: "language" },
+  { label: "PHP", target: 75, category: "language" },
 ]
 
 interface SkillCategory {
@@ -50,16 +51,17 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: "Backend Development",
-    icon: ({ size, className }) => (
-      <Image alt="backend" src={backend || "/placeholder.svg"} width={size} height={size} className={className} />
-    ),
-    gradient: "from-green-400 to-green-600",
+    // icon: ({ size, className }) => (
+    //   <Image alt="backend" src={backend || "/placeholder.svg"} width={size} height={size} className={className} />
+    // ),
+    icon: Server,
+    gradient: "from-emerald-500 to-emerald-600",
     skills: skills.filter((s) => s.category === "backend"),
   },
   {
     title: "Langages de Programmation",
     icon: Code,
-    gradient: "from-purple-400 to-purple-600",
+    gradient: "from-violet-500 to-violet-600",
     skills: skills.filter((s) => s.category === "language"),
   },
 ]
@@ -71,7 +73,12 @@ export default function MySkills() {
     <div id="skills" className="w-full space-y-6 text-white overflow-hidden">
       {/* En-tête */}
       <div className="text-center space-y-2">
-        <h1 className="text-white text-2xl font-bold block lg:hidden">Mes compétences</h1>
+        <motion.h1
+          variants={textReveal()}
+          className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+        >
+          Mes compétences
+        </motion.h1>
         <p className="text-gray-400 text-sm leading-relaxed">
           Un aperçu de mes compétences en développement web et mobile avec mes niveaux de maîtrise
         </p>
@@ -111,11 +118,11 @@ export default function MySkills() {
             <div className="text-sm text-gray-400">Moyenne</div>
           </div>
           <div className="space-y-2">
-            <div className="text-2xl font-bold text-purple-400">3+</div>
+            <div className="text-2xl font-bold text-purple-400">+</div>
             <div className="text-sm text-gray-400">Années d&apos;exp.</div>
           </div>
           <div className="space-y-2">
-            <div className="text-2xl font-bold text-orange-400">10+</div>
+            <div className="text-2xl font-bold text-orange-400">5+</div>
             <div className="text-sm text-gray-400">Projets</div>
           </div>
         </div>
@@ -159,7 +166,7 @@ function SkillCategoryCard({ category, index, fullWidth = false }: SkillCategory
       {/* Barres de progression */}
       <div className="space-y-4">
         {category.skills.map((skill) => (
-          <ProgressBar key={skill.label} label={skill.label} target={skill.target} />
+          <ProgressBar key={skill.label} label={skill.label} target={skill.target} gradient={category.gradient}/>
         ))}
       </div>
     </motion.div>

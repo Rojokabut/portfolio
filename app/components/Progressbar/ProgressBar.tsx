@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 type ProgressBarProps = {
   label: string;
   target: number;
+  gradient?: string; // Optionnel, si vous souhaitez personnaliser le gradient
 };
 
-export default function ProgressBar({ label, target }: ProgressBarProps) {
+export default function ProgressBar({ label, target , gradient}: ProgressBarProps) {
   const [value, setValue] = useState(0);
   const [inView, setInView] = useState(false);
 
@@ -41,7 +42,7 @@ export default function ProgressBar({ label, target }: ProgressBarProps) {
       </div>
       <div className="w-full bg-gray-700 rounded-full h-2">
         <div
-          className="bg-gradient-to-r from-[#479ff6] to-[#a200ff] h-2 rounded-full transition-all duration-300 ease-in-out"
+          className={`bg-gradient-to-r ${gradient} h-2 rounded-full transition-all duration-300 ease-in-out`}
           style={{ width: `${value}%` }}
         ></div>
       </div>

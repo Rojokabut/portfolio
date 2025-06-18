@@ -2,7 +2,7 @@
 import { useRef, useState, useEffect } from "react"
 import { Calendar, University, GraduationCap, Award } from "lucide-react"
 import { motion } from "framer-motion"
-import { fadeIn } from "../variants"
+import { fadeIn ,textReveal} from "../variants"
 
 interface Formation {
   id: string
@@ -97,7 +97,12 @@ export default function Formation() {
     <div ref={ref} id="formation" className="overflow-hidden">
       {/* Titre mobile */}
       <div className="text-center mb-6">
-        <h1 className="text-white text-2xl font-bold lg:hidden">Formations</h1>
+        <motion.h1
+          variants={textReveal()}
+          className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+        >
+          Formation
+        </motion.h1>
       </div>
 
       {/* Timeline desktop / Grille mobile */}

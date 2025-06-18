@@ -113,7 +113,7 @@ body {
 
 /* Classes d'animation */
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .animate-marquee:hover {

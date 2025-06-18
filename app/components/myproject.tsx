@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image, { type StaticImageData } from "next/image"
 import { Eye, ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
-import { fadeIn } from "../variants"
+import { fadeIn , textReveal} from "../variants"
 
 import Chat from "../images/chat.png"
 import Portf from "../images/capt.png"
@@ -83,10 +83,15 @@ const projects: Project[] = [
 
 export default function MyProject() {
   return (
-    <div className="overflow-hidden">
+    <div id="projects" className="overflow-hidden">
       {/* Titre mobile */}
       <div className="text-center mb-6">
-        <h1 className="text-white text-2xl font-bold lg:hidden">Mes Projets</h1>
+        <motion.h1
+          variants={textReveal()}
+          className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+        >
+          Mes projets
+        </motion.h1>
       </div>
 
       {/* Grille de projets */}
@@ -108,7 +113,7 @@ interface ProjectCardProps {
 function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
-      id="projects"
+      
       variants={fadeIn("up", 0.2 + index * 0.1)}
       initial="hidden"
       whileInView="show"

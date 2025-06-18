@@ -96,3 +96,31 @@ export const textReveal = (delay: number = 0): Variants => {
     },
   }
 }
+
+// const skillCategories: SkillCategory[] = [
+//   {
+//     title: "Frontend Development",
+//     icon: Figma,
+//     gradient: "from-blue-500 to-blue-600",
+//     accentColor: "text-blue-400",
+//     description: "Interfaces utilisateur modernes et réactives",
+//     skills: skills.filter((s) => s.category === "frontend" || s.category === "mobile"),
+//   },
+//   {
+//     title: "Backend Development", 
+//     icon: ({ size, className }) => (
+//       <Image alt="backend" src={backend || "/placeholder.svg"} width={size} height={size} className={className} />
+//     ),
+//     gradient: "from-emerald-500 to-emerald-600",
+//     accentColor: "text-emerald-400",
+//     description: "APIs robustes et architectures scalables",
+//     skills: skills.filter((s) => s.category === "backend"),
+//   },
+//   {
+//     title: "Langages de Programmation",
+//     icon: Code,
+//     gradient: "from-violet-500 to-violet-600",
+//     accentColor: "text-violet-400", 
+//     description: "Maîtrise des langages de développement",
+//     skills: skills.filter((s) => s.category === "language"),
+//   },

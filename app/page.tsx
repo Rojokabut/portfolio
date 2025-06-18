@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { staggerContainer } from "./variants"
+import { UserCheck, Zap, FolderOpen, GraduationCap, Wrench, Briefcase } from "lucide-react"
 
 // Composants
 import Myskills from "./components/myskills"
@@ -22,15 +23,15 @@ interface NavItem {
   id: ComponentType
   label: string
   component: React.ComponentType
-  icon: string
+  icon: React.ComponentType<{ size: number; className?: string }>
 }
 
 const navItems: NavItem[] = [
-  { id: "about", label: "À propos", component: About, icon: "👋" },
-  { id: "skills", label: "Compétences", component: Myskills, icon: "⚡" },
-  { id: "projects", label: "Projets", component: Myproject, icon: "🚀" },
-  { id: "formation", label: "Formation", component: Formation, icon: "🎓" },
-  { id: "tools", label: "Outils", component: Tools, icon: "🛠️" },
+  { id: "about", label: "À propos", component: About, icon: UserCheck },
+  { id: "skills", label: "Compétences", component: Myskills, icon: Zap },
+  { id: "projects", label: "Projets", component: Myproject, icon: FolderOpen },
+  { id: "formation", label: "Formation", component: Formation, icon: GraduationCap },
+  { id: "tools", label: "Outils", component: Tools, icon: Wrench },
 ]
 
 export default function Home() {
@@ -55,10 +56,10 @@ export default function Home() {
       </div>
 
       <motion.div variants={staggerContainer()} initial="hidden" animate="show" className="relative z-10 pt-20 pb-10">
-        <div className="container mx-auto px-4 lg:px-8 ">
-          <div className="flex flex-col lg:flex-row gap-8 max-w-9xl lg:mx-auto">
+         <div className="container mx-auto px-4 lg:px-8 w-full">
+          <div className="flex lg:flex-row flex-col gap-8 max-w-9xl lg:mx-auto">
             {/* Section Profil */}
-            <motion.div id="home" variants={staggerContainer()} className="lg:w-1/2 w-full">
+            <motion.div id="home" variants={staggerContainer()} className="lg:w-1/2">
               <Myprofile />
             </motion.div>
 
@@ -74,7 +75,7 @@ export default function Home() {
                     className="flex items-center space-x-4"
                   >
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                      <span className="text-2xl">💼</span>
+                      <Briefcase size={24} className="text-white" />
                     </div>
                     <div>
                       <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -95,7 +96,7 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 + index * 0.1 }}
                         className={`
-                          relative px-6 py-3 rounded-xl font-medium transition-all duration-300
+                          relative px-6 py-3 rounded-xl transition-all duration-300
                           flex items-center space-x-2 group
                           ${
                             activeComponent === item.id
@@ -105,8 +106,8 @@ export default function Home() {
                         `}
                         onClick={() => setActiveComponent(item.id)}
                       >
-                        <span className="text-lg">{item.icon}</span>
-                        <span>{item.label}</span>
+                        <item.icon size={16} className="text-sm" />
+                        <span className="text-xs">{item.label}</span>
                         {activeComponent === item.id && (
                           <motion.div
                             layoutId="activeTab"

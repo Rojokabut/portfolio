@@ -4,7 +4,7 @@ import type React from "react"
 import Image, { type StaticImageData } from "next/image"
 import { DatabaseZap, Settings2 } from "lucide-react"
 import { motion } from "framer-motion"
-import { fadeIn } from "../variants"
+import { fadeIn , textReveal} from "../variants"
 
 // Import des images
 import vscode from "../logo/vscode.webp"
@@ -54,10 +54,15 @@ const toolCategories: ToolCategory[] = [
 
 export default function Tools() {
   return (
-    <div className="overflow-hidden">
+    <div id="tools" className="overflow-hidden">
       {/* Titre mobile */}
       <div className="text-center mb-6">
-        <h1 className="text-white text-2xl font-bold lg:hidden">Tools & Database</h1>
+        <motion.h1
+          variants={textReveal()}
+          className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+        >
+          Tools & Databases
+        </motion.h1>
       </div>
 
       {/* Grille des catégories */}
@@ -81,7 +86,7 @@ function ToolCategory({ category, index }: ToolCategoryProps) {
 
   return (
     <motion.div
-      id="tools"
+      
       variants={fadeIn("up", 0.2 + index * 0.1)}
       initial="hidden"
       whileInView="show"
