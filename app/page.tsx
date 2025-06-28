@@ -116,7 +116,7 @@ export default function Home() {
                           />
                         )}
                       </motion.button>
-                    ))}
+                    ))}   
                   </div>
                 </nav>
 

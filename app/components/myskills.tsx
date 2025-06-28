@@ -118,7 +118,7 @@ export default function MySkills() {
             <div className="text-sm text-gray-400">Moyenne</div>
           </div>
           <div className="space-y-2">
-            <div className="text-2xl font-bold text-purple-400">+</div>
+            <div className="text-2xl font-bold text-purple-400">+1ans</div>
             <div className="text-sm text-gray-400">Années d&apos;exp.</div>
           </div>
           <div className="space-y-2">

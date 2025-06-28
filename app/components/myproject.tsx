@@ -9,6 +9,7 @@ import { fadeIn , textReveal} from "../variants"
 
 import Chat from "../images/chat.png"
 import Portf from "../images/capt.png"
+import Chatteo from "../images/chatteo.png"
 
 interface Technology {
   name: string
@@ -28,7 +29,7 @@ interface Project {
   image: StaticImageData
   technologies: Technology[]
   links: ProjectLink[]
-  isOldProject?: boolean
+  Project?: string
 }
 
 const projects: Project[] = [
@@ -38,7 +39,7 @@ const projects: Project[] = [
     description:
       "Cette application permet aux utilisateurs de discuter en temps réel grâce à un système de messagerie instantanée. Elle est construite avec ReactJS côté frontend et Node.js avec Socket.io côté backend pour gérer les connexions en temps réel.",
     image: Chat,
-    isOldProject: true,
+    Project: "Ancien projet",
     technologies: [
       { name: "ReactJS", color: "bg-blue-500" },
       { name: "JavaScript", color: "bg-violet-500" },
@@ -75,6 +76,27 @@ const projects: Project[] = [
       {
         label: "Voir le code",
         href: "https://github.com/Rojokabut/portfolio",
+        icon: Eye,
+      },
+    ],
+  },
+  {
+    id: "chatteo",
+    title: "Chatteo",
+    Project: "Projet récent",
+    description:
+      "Chatteo est un site de conversation avec une IA, développé avec Next.js, Tailwind CSS et l’API Gemini. Il offre une interface simple et moderne pour discuter avec une intelligence artificielle en temps réel.",
+    image: Chatteo,
+    technologies: [
+      { name: "Next.js", color: "bg-blue-500" },
+      { name: "TypeScript", color: "bg-violet-500" },
+      { name: "Tailwind CSS", color: "bg-green-500" },
+      { name: "API Gemini", color: "bg-red-500" },
+    ],
+    links: [
+      {
+        label: "Voir demo",
+        href: "https://chatteo.vercel.app",
         icon: Eye,
       },
     ],
@@ -127,9 +149,9 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           src={project.image || "/placeholder.svg"}
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        {project.isOldProject && (
-          <div className="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium">
-            Ancien projet
+        {project.Project && (
+          <div className={`absolute top-3 right-3 ${project.Project === "Ancien projet" ? 'bg-orange-500' : 'bg-green-500'}  text-white px-2 py-1 rounded-full text-xs font-medium`}>
+            {project.Project}
           </div>
         )}
       </div>

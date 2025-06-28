@@ -43,7 +43,7 @@ export default function Navbar() {
       element.scrollIntoView({ behavior: "smooth" })
       
     }
-    // setIsMobileMenuOpen(false)
+    setIsMobileMenuOpen(false)
   }
 
   return (
